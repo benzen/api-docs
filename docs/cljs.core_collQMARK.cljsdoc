@@ -14,3 +14,32 @@ Lists, maps, sets, and vectors are collections.
 cljs.core/seq?
 cljs.core/list?
 cljs.core/sequential?
+
+===== Example#d30884
+
+```
+(coll? [1 2 3])
+;;=> true
+
+(coll? '(1 2 3))
+;;=> true
+
+(coll? #{1 2 3})
+;;=> true
+
+(coll? {:foo 1 :bar 2})
+;;=> true
+```
+
+Not collections:
+
+```
+(coll? "foo")
+;;=> false
+
+(coll? 123)
+;;=> false
+
+(coll? nil)
+;;=> false
+```
