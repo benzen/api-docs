@@ -6,7 +6,7 @@ cljs.core/comment
 
 ===== Description
 
-Ignores all `body` forms ("commenting out"). Returns nil.
+Ignores all `body` forms (i.e. "commenting out"). Returns nil.
 
 This is often used near the bottom of a file to hold expressions that test
 different functions during development.  Specific expressions within the
