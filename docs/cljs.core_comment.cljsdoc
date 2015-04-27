@@ -25,3 +25,13 @@ You can also use `;` to "comment out" code until the end of a line.
   (bar "hello"))
 ;;=> nil
 ```
+
+Inner forms must still be syntactically correct:
+
+```
+(comment [1 2 3]])
+;; Error: Unmatched delimiter ]
+
+(comment a : b)
+;; Error: Invalid token :
+```
