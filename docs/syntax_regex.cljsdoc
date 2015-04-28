@@ -27,4 +27,17 @@ cljs.core/re-matches
 ===== Example#dacf80
 
 ```
+#"foo"
+;;=> #"foo"
+
+(re-seq #"(?i)foo" "FOO BAR foo bar")
+;;=> ("foo")
+```
+
+```
+#"(?i)foo"
+;;=> #"foo"
+
+(re-seq #"(?i)foo" "FOO BAR foo bar")
+;;=> ("FOO" "foo")
 ```
