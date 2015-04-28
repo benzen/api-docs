@@ -1,0 +1,37 @@
+===== Name
+""
+
+===== Type
+syntax
+
+===== Description
+
+Signifies a string.  ClojureScript strings are the same as JavaScript strings.
+
+Strings may span multiple lines.
+
+===== Related
+cljs.core/str
+
+===== TODO
+show table of escape characters
+
+===== Example#eb97ac
+
+```
+"foo"
+;;=> "foo"
+
+"hello
+     world"
+;;=> "hello\n     world"
+```
+
+Characters can be escaped:
+
+```
+(println "foo\nbar")
+;; prints:
+;;   foo
+;;   bar
+```
