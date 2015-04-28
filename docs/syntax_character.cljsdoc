@@ -3,3 +3,36 @@
 
 ===== Type
 syntax
+
+===== Description
+
+Signifies a single character string.  Carried over from Clojure for
+compatibility.  They are represented as single character JavaScript strings.
+
+`\c` = `"c"`
+
+| special characters  | result   |
+|---------------------|----------|
+| `\newline`          | `"\n"`   |
+| `\space`            | `" " `   |
+| `\tab`              | `"\t"`   |
+| `\formfeed`         | `"\f"`   |
+| `\backspace`        | `"\b"`   |
+| `\return`           | `"\r"`   |
+
+===== Related
+""
+cljs.core/str
+
+===== Example#495a47
+
+```
+\c
+;;=> "c"
+
+\A
+;;=> "A"
+
+\newline
+;;=> "\n"
+```

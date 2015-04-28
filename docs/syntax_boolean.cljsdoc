@@ -4,3 +4,10 @@
 ===== Type
 syntax
 
+===== Description
+
+`true` or `false`
+
+===== Related
+cljs.core/boolean
+
