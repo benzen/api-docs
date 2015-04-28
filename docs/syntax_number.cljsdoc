@@ -29,7 +29,17 @@ Scientific notation;
 ;;=> 0.0012
 ```
 
-Radix notation for specifying different bases (e.g. binary, octal, hex), up to base 36.
+Standard hex and octal notations:
+
+```
+0x1f
+;;=> 31
+
+010
+;;=> 8
+```
+
+Radix notation for using up to base 36.
 
 ```
 2r10111
