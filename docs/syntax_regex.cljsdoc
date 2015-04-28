@@ -24,15 +24,23 @@ cljs.core/re-find
 cljs.core/re-seq
 cljs.core/re-matches
 
+===== TODO
+add multi-line example. Why do these have the same output of nil?:
+
+(re-seq #"(?m)a.*b" "a\nb")
+(re-seq #"a.*b" "a\nb")
+
 ===== Example#dacf80
 
 ```
 #"foo"
 ;;=> #"foo"
 
-(re-seq #"(?i)foo" "FOO BAR foo bar")
+(re-seq #"foo" "FOO BAR foo bar")
 ;;=> ("foo")
 ```
+
+Case-insensitive matching:
 
 ```
 #"(?i)foo"
