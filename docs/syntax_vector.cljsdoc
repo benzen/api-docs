@@ -8,6 +8,10 @@ syntax
 
 Signifies a literal vector.
 
+===== Related
+cljs.core/vector
+cljs.core/vec
+
 ===== Example#cd26b0
 
 ```

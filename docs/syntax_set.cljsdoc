@@ -3,3 +3,19 @@
 
 ===== Type
 syntax
+
+===== Description
+
+Signifies a literal set.
+
+===== Related
+cljs.core/hash-set
+cljs.core/sorted-set
+cljs.core/sorted-set-by
+
+===== Example#f11ab6
+
+```
+#{1 2 3}
+;;=> #{1 2 3}
+```
