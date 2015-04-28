@@ -20,3 +20,11 @@ cljs.core/sorted-map-by
 {:foo 1 :bar 2}
 ;;=> {:foo 1, :bar 2}
 ```
+
+Use any value as a key:
+
+```
+(def m {[1 2] 3})
+(get m [1 2])
+;;=> 3
+```
