@@ -10,11 +10,15 @@ Create an anonymous function.
 
 `#(...)` = `(fn [args] (...))`
 
-Use `%` or `%1` to access the first argument.  `%2` will access the second, and
-so on.  Use `%&` to access the rest of the arguments.
+Use `%` or `%1` to access the first argument.  Use `%2`, `%3` and so on to
+access subsequent arguments.  Use `%&` to access the rest of the arguments past
+the highest individually referenced argument.
 
 Note that `#(1)` does not create a function that returns `1`, for the same
 reason that `(1)` does evaluate to `1`.
+
+`#()` forms cannot be nested, since this would create an ambiguity between the
+automatically assigned argument names.
 
 ===== Related
 fn
