@@ -3,3 +3,22 @@
 
 ===== Type
 syntax
+
+===== Description
+
+Intended for use inside a syntax-quote.
+
+Forces evaluation of the following form and expands its children into the
+parent form.
+
+===== Related
+`
+~
+
+===== Example#e6f73d
+
+```
+(def foo '[a b c])
+`(~@foo)
+;;=> (a b c)
+```

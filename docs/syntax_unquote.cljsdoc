@@ -3,3 +3,24 @@
 
 ===== Type
 syntax
+
+===== Description
+
+Intended for use inside a syntax-quote.
+
+Forces evaluation of the following form.
+
+===== Related
+`
+~@
+
+===== Example#1ff51e
+
+```
+(def foo 1)
+`~foo
+;;=> 1
+
+`(def foo ~foo)
+;;=> (def cljs.user/foo 1)
+```

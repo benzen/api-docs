@@ -3,3 +3,33 @@
 
 ===== Type
 syntax
+
+===== Description
+
+Prevent evaluation of the following form.
+
+Adds namespace-qualification to any symbols inside the following form by
+resolving them in the current context.
+
+Any non-namespaced symbols ending with `#` will resolve to a generated symbol
+of the same name with `_` and a unique ID appended.  All references to that
+symbol within a syntax-quoted expression will resolve to the same generated
+symbol.
+
+===== Related
+'
+~
+~@
+
+===== Example#bffbdf
+
+```
+`foo
+;;=> cljs.user/foo
+
+`foo#
+;;=> foo__20418__auto__
+
+`(def foo 1)
+;;=> (def cljs.user/foo 1)
+```
