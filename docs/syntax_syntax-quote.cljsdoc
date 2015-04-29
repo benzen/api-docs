@@ -1,4 +1,5 @@
 ===== Name
+syntax/syntax-quote
 `
 
 ===== Type
@@ -20,9 +21,9 @@ symbol within a syntax-quoted expression will resolve to the same generated
 symbol.
 
 ===== Related
-'
-~
-~@
+syntax/quote
+syntax/unquote
+syntax/unquote-splicing
 
 ===== Example#bffbdf
 

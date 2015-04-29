@@ -1,4 +1,5 @@
 ===== Name
+syntax/list
 ()
 
 ===== Type
@@ -10,7 +11,7 @@ Signifies a literal list.  When evaluated, it is interpreted as a call to some
 code.  The first argument is called with the subsequent arguments.
 
 ===== Related
-[]
+syntax/vector
 cljs.core/quote
 
 ===== Example#cd26b0

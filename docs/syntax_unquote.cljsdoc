@@ -1,4 +1,5 @@
 ===== Name
+syntax/unquote
 ~
 
 ===== Type
@@ -14,8 +15,8 @@ Intended for use inside a syntax-quote.
 Forces evaluation of the following form.
 
 ===== Related
-`
-~@
+syntax/syntax-quote
+syntax/unquote-splicing
 
 ===== Example#1ff51e
 

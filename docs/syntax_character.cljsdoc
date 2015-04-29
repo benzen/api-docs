@@ -1,4 +1,5 @@
 ===== Name
+syntax/character
 \
 
 ===== Type
@@ -26,7 +27,7 @@ compatibility.  They are represented as single character JavaScript strings.
 | `\return`           | `"\r"`   |
 
 ===== Related
-""
+syntax/string
 cljs.core/str
 
 ===== Example#495a47

@@ -1,4 +1,5 @@
 ===== Name
+syntax/function
 #()
 
 ===== Type
@@ -21,7 +22,7 @@ reason that `(1)` does evaluate to `1`.
 automatically assigned argument names.
 
 ===== Related
-fn
+cljs.core/fn
 cljs.core/defn
 
 ===== Example#6a87de
