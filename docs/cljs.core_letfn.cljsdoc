@@ -2,7 +2,7 @@
 cljs.core/letfn
 
 ===== Type
-special form
+macro
 
 ===== Signature
 [fnspecs & body]
@@ -15,7 +15,7 @@ functions as well as `body`.
 
 `fnspecs` must be a vector with an even number of forms. See `let`.
 
-`letfn` is one of ClojureScript's [special forms].
+`letfn` is a wrapper over one of ClojureScript's [special forms].
 
 [special forms]:http://clojure.org/special_forms
 

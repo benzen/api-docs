@@ -2,7 +2,7 @@
 cljs.core/fn
 
 ===== Type
-special form
+macro
 
 ===== Signature
 [name? [params*] prepost-map? body]
