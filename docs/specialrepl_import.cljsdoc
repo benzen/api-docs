@@ -6,3 +6,22 @@ special form (repl)
 
 ===== Description
 
+Only usable from a REPL.
+
+Import Google Closure classes.
+
+===== TODO
+
+file an issue because the following example does not work
+with the browser repl used in the Quick Start wiki page.
+
+Basing the examples from the :import forms from:
+https://github.com/clojure/clojurescript/blob/master/test/cljs/cljs/import_test.cljs
+
+===== Example#03acc0
+
+```
+(import goog.math.Long
+        [goog.math Vec2 Vec3]
+        [goog.math Integer])
+```
