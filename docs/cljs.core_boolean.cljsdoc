@@ -10,7 +10,7 @@ Return `false` if `x` is false or nil.  Otherwise return `true`.  This is the
 truthiness condition used by `if` expressions.
 
 ===== Related
-cljs.core/if
+special/if
 
 ===== Example#9edf3a
 

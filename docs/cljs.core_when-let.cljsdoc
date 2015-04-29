@@ -16,5 +16,5 @@ When `test` is logical true, evaluates `body` with the value of `test` bound to
 cljs.core/if-let
 cljs.core/when
 cljs.core/when-not
-cljs.core/if
+special/if
 cljs.core/when-first

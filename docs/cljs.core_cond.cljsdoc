@@ -22,4 +22,4 @@ keyword `:else` (a keyword always evaluates to logical true).
 ===== Related
 cljs.core/condp
 cljs.core/case
-cljs.core/if
+special/if

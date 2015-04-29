@@ -1,5 +1,5 @@
 ===== Name
-cljs.core/catch
+special/catch
 
 ===== Type
 special form
@@ -17,6 +17,6 @@ special form
 of the `try` expression.
 
 ===== Related
-cljs.core/try
-cljs.core/finally
-cljs.core/throw
+special/try
+special/finally
+special/throw

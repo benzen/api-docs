@@ -32,4 +32,4 @@ If no default expression is provided and no clause matches, an Error is thrown.
 
 ===== Related
 cljs.core/cond
-cljs.core/if
+special/if

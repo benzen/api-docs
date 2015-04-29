@@ -1,5 +1,5 @@
 ===== Name
-cljs.core/finally
+special/finally
 
 ===== Type
 special form
@@ -15,6 +15,6 @@ special form
 an error or not, but they are never the return value of a `try` expression.
 
 ===== Related
-cljs.core/try
-cljs.core/catch
-cljs.core/throw
+special/try
+special/catch
+special/throw

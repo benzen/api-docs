@@ -37,7 +37,7 @@ for the function.
     (\* a b c)))</pre></td></tr></tbody></table>
 
 ===== Related
-cljs.core/def
+special/def
 cljs.core/defn-
 cljs.core/defmacro
 cljs.core/fn

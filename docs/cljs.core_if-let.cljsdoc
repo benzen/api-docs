@@ -17,4 +17,4 @@ When `test` is logical true, evaluates `then` with the value of `test` bound to
 
 ===== Related
 cljs.core/when-let
-cljs.core/if
+special/if

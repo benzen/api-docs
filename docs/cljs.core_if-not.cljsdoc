@@ -14,5 +14,5 @@ If `test` is false or nil, evaluates and returns `then`. Otherwise, evaluates
 and returns `else`. `else` defaults to nil if not provided.
 
 ===== Related
-cljs.core/if
+special/if
 cljs.core/when-not

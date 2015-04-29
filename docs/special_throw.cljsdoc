@@ -1,5 +1,5 @@
 ===== Name
-cljs.core/throw
+special/throw
 
 ===== Type
 special form
@@ -14,6 +14,6 @@ special form
 `(throw (js/Error. "Oops!"))`
 
 ===== Related
-cljs.core/try
-cljs.core/catch
-cljs.core/finally
+special/try
+special/catch
+special/finally

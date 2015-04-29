@@ -19,7 +19,7 @@ arguments, otherwise it returns the value of the last argument.
 
 ===== Related
 cljs.core/and
-cljs.core/if
+special/if
 
 ===== Example#d50433
 

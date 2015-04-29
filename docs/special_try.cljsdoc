@@ -1,5 +1,5 @@
 ===== Name
-cljs.core/try
+special/try
 
 ===== Type
 special form
@@ -26,6 +26,6 @@ expressions will be evaluated for their side effects.
 `try` is one of ClojureScript's [special forms](http://clojure.org/special_forms).
 
 ===== Related
-cljs.core/catch
-cljs.core/finally
-cljs.core/throw
+special/catch
+special/finally
+special/throw
