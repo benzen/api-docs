@@ -6,6 +6,9 @@ syntax
 
 ===== Description
 
+(Only intended for use in Clojure macros, which can be used from but not
+written in ClojureScript.)
+
 Prevent evaluation of the following form.
 
 Adds namespace-qualification to any symbols inside the following form by
