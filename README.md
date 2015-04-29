@@ -47,4 +47,4 @@ For example, `assoc-in` has the following format:
     ;;    {:password "nhoJ", :name "John", :age 43}]
     ```
 
-[generated docs]:http://github.com/cljs-website/api-docs-generated
+[generated docs]:http://github.com/cljsinfo/api-docs-generated
