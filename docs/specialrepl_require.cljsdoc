@@ -10,6 +10,8 @@ description below taken from `repl-special-doc-map`
 
 ===== Description
 
+Only usable from a REPL.
+
 Loads libs, skipping any that are already loaded. Each argument is
 either a libspec that identifies a lib or a flag that modifies how all the identified
 libs are loaded.
@@ -37,6 +39,8 @@ A flag is a keyword. Recognized flags:
   identified libs directly or indirectly load via require or use
 - `:verbose` triggers printing information about each load, alias, and refer
 
+===== Related
+specialrepl/require-macros
 
 ===== Example#ab0355
 
