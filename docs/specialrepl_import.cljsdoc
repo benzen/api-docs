@@ -5,9 +5,11 @@ specialrepl/import
 special form (repl)
 
 ===== Signature
-[& specs]
+[& import-symbols-or-lists]
 
 ===== Description
+
+import-list => (closure-namespace constructor-name-symbols*)
 
 Only usable from a REPL.
 
