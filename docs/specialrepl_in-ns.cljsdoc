@@ -4,5 +4,17 @@ specialrepl/in-ns
 ===== Type
 special form (repl)
 
+===== Signature
+[name]
+
 ===== Description
 
+Only usable from a REPL.
+
+Changes to the namespace `name`.
+
+===== Example#e81eb3
+
+```
+(in-ns 'foo.core)
+```
