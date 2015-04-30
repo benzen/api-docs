@@ -10,18 +10,22 @@ Only usable from a REPL.
 
 Import Google Closure classes.
 
-===== TODO
-
-file an issue because the following example does not work
-with the browser repl used in the Quick Start wiki page.
-
-Basing the examples from the :import forms from:
-https://github.com/clojure/clojurescript/blob/master/test/cljs/cljs/import_test.cljs
-
 ===== Example#03acc0
 
 ```
-(import goog.math.Long
-        [goog.math Vec2 Vec3]
-        [goog.math Integer])
+(import 'goog.math.Long
+        '[goog.math Vec2 Vec3]
+        '[goog.math Integer])
+
+(Long. 4 6)
+;;=> #<25769803780>
+
+(Vec2. 1 2)
+;;=> #<(1, 2)>
+
+(Vec3. 1 2 3)
+;;=> #<(1, 2, 3)>
+
+(Integer.fromString "10")
+;;=> #<10>
 ```
