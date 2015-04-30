@@ -16,6 +16,9 @@ map.
 Preceding a keyword with `::` will prepend the given keyword with the current
 namespace.  For example, in the user namespace, `::foo` is read as `:user/foo`.
 
+Note: preceding a namespace-qualified keyword with `::` will throw a reader
+exception if the specified namespace does not exist.
+
 ===== Related
 cljs.core/keyword
 cljs.core/keyword?
