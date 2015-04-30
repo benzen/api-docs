@@ -4,6 +4,9 @@ specialrepl/import
 ===== Type
 special form (repl)
 
+===== Signature
+[& specs]
+
 ===== Description
 
 Only usable from a REPL.
