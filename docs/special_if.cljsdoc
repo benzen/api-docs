@@ -17,6 +17,18 @@ and is a fundamental building block of the language. All other conditionals in
 ClojureScript are based on `if`s notion of truthiness (ie: anything other than
 false or nil).
 
+==== Example
+
+```
+(if (empty? (list 1 2))
+    (println "I've got an empty list")
+    (println "I've got a list with things"))
+
+(println (if (empty? (list 1 2))
+          "I've got an empty list"
+          "I've got a list with things"))
+```
+
 ===== Related
 cljs.core/cond
 cljs.core/when
