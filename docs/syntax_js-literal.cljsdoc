@@ -1,6 +1,7 @@
 ===== Name
 syntax/js-literal
-#js
+#js []
+#js {}
 
 ===== Type
 tagged literal
