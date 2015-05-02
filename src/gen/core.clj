@@ -16,13 +16,7 @@
 
 (defn format-section
   "Given title lines and body lines, create a formatted title and body pair.
-
-  ===== Foo   <---- Title
-  ===== Bar   <----   lines (potentially multiple due to partitioning algorithm)
-
-  hello       <---- Body
-  world       <----   lines
-  "
+  (If there was no empty line between this title and the last, they will be grouped.)"
   [[title-lines body-lines]]
   (let [title (-> title-lines last format-title) ;; ignore all but last title
         body (join "\n" body-lines)]
