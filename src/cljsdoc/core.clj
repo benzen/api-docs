@@ -1,7 +1,7 @@
 (ns cljsdoc.core
   (:require
     [clojure.pprint :refer [pprint]]
-    [me.raynes.fs :refer [list-dir size]]
+    [me.raynes.fs :refer [list-dir size base-name]]
     [clojure.contrib.humanize :refer [filesize]]
 
     [cljsdoc.transform :refer [transform-doc]]
@@ -12,8 +12,9 @@
 (def min-docs-outfile "docs.min.edn")
 
 (defn build-doc
-  [filename]
-  (let [doc (parse-doc (slurp filename) filename)]
+  [file]
+  (let [filename (base-name file)
+        doc (parse-doc (slurp file) filename)]
     (if (valid-doc? doc)
       (transform-doc doc)
       (do
@@ -33,10 +34,10 @@
     (println (str "Created " filename " (" size-str ")"))))
 
 (defn build-docs []
-  (let [filenames (list-dir "docs")
-        docs (map build-doc filenames)
-        skipped (- (count filenames) (count docs))
-        parsed (- (count filenames) skipped)
+  (let [files (list-dir "docs")
+        docs (map build-doc files)
+        skipped (- (count files) (count docs))
+        parsed (- (count files) skipped)
         output (with-out-str (pprint docs))]
     (spit docs-outfile output)
     (spit min-docs-outfile (pr-str docs))
