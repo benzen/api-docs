@@ -14,13 +14,10 @@
 (defn build-doc
   [file]
   (let [filename (base-name file)
-        doc (parse-doc (slurp file) filename)]
-    (if (valid-doc? doc)
-      (transform-doc doc)
-      (do
-        (binding [*out* *err*]
-          (println (str "Skipped file '" filename "'. Invalid format.")))
-        nil))))
+        doc (-> (parse-doc (slurp file) filename)
+                transform-doc)]
+    (when (valid-doc? doc)
+      doc)))
 
 (defn format-status
   [parsed skipped]
@@ -33,9 +30,13 @@
   (let [size-str (filesize (size filename) :binary true)]
     (println (str "Created " filename " (" size-str ")"))))
 
+(defn cljsdoc-files [dir]
+  (let [files (list-dir dir)]
+    (filter #(.endsWith (.getName %) ".cljsdoc") files)))
+
 (defn build-docs []
-  (let [files (list-dir "docs")
-        docs (map build-doc files)
+  (let [files (cljsdoc-files "docs")
+        docs (keep build-doc files)
         skipped (- (count files) (count docs))
         parsed (- (count files) skipped)
         output (with-out-str (pprint docs))]
@@ -44,8 +45,12 @@
 
     (println (format-status parsed skipped))
     (show-created-file-status docs-outfile)
-    (show-created-file-status min-docs-outfile)))
+    (show-created-file-status min-docs-outfile)
+
+    skipped))
 
 (defn -main
   [& args]
-  (build-docs))
+  (let [skipped (build-docs)]
+    (System/exit (if (pos? skipped) 1 0))))
+
