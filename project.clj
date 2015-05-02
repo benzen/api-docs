@@ -6,5 +6,5 @@
   :source-paths ["src"]
   :test-paths ["test"]
 
-  :main gen.core
+  :main cljsdoc.core
   )

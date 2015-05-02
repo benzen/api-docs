@@ -1,4 +1,4 @@
-(ns gen.parse
+(ns cljsdoc.parse
   (:require
     [clojure.set :refer [difference]]
     [clojure.string :refer [split-lines join lower-case trim]]))

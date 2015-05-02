@@ -1,12 +1,12 @@
-(ns gen.core
+(ns cljsdoc.core
   (:require
     [clojure.pprint :refer [pprint]]
     [me.raynes.fs :refer [list-dir size]]
     [clojure.contrib.humanize :refer [filesize]]
 
-    [gen.transform :refer [transform-doc]]
-    [gen.validate :refer [valid-doc?]]
-    [gen.parse :refer [parse-doc]]))
+    [cljsdoc.transform :refer [transform-doc]]
+    [cljsdoc.validate :refer [valid-doc?]]
+    [cljsdoc.parse :refer [parse-doc]]))
 
 (def docs-outfile "docs.edn")
 (def min-docs-outfile "docs.min.edn")

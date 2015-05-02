@@ -1,6 +1,6 @@
-(ns gen.core_test
+(ns cljsdoc.core_test
   (:require
-    [gen.parse :refer [parse-doc]]
+    [cljsdoc.parse :refer [parse-doc]]
     [clojure.test :refer [deftest is]]))
 
 (def example1-filename
