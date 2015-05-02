@@ -15,3 +15,4 @@ lein test
 ```
 
 [api-docs-report]:http://cljsinfo.github.io/api-docs-report/
+[generated docs]:https://github.com/shaunlebron/cljs-api-docs
