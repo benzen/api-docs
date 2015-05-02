@@ -2,8 +2,7 @@
 cljs.core/loop
 
 ===== Signature
-(loop [bindings*] 
-  body-exprs*)
+[bindings*] body-exprs*
 
 ===== Description
 
