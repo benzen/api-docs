@@ -3,6 +3,9 @@
     [gen.core :refer [parse-doc]]
     [clojure.test :refer [deftest is]]))
 
+(def example1-filename
+  "cljs.core_foo.cljsdoc")
+
 (def example1
 "
 ignore
@@ -40,6 +43,7 @@ N/A
    "example#1" "N/A"
    "example#2" "N/A"
    "example#3" "N/A"
+   :filename "cljs.core_foo.cljsdoc"
    :example-ids ["example#1" "example#2" "example#3"]
    :empty-sections #{"empty1"
                      "empty2"
@@ -48,4 +52,6 @@ N/A
    })
 
 (deftest example1-test
-  (is (= (parse-doc example1) example1-parsed)))
+  (let [parsed (parse-doc example1 example1-filename)]
+    (is (= parsed example1-parsed))))
+

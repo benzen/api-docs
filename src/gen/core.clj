@@ -29,7 +29,7 @@
 
 (defn parse-doc
   "Convert cljsdoc content to a map of section title => section body text."
-  [content]
+  [content filename]
   (let [lines (split-lines content)
 
         ;; parse content as a list of section title/body pairs
@@ -54,7 +54,8 @@
 
         ;; final structure
         result (-> (into {} pairs)
-                   (assoc :example-ids examples
+                   (assoc :filename filename
+                          :example-ids examples
                           :empty-sections empty-titles))]
     result))
 
@@ -74,7 +75,7 @@
 
 (defn build-doc
   [filename]
-  (let [doc (parse-doc (slurp filename))]
+  (let [doc (parse-doc (slurp filename) filename)]
     (if (valid-doc? doc)
       (transform-doc doc)
       (do
