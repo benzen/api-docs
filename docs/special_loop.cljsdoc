@@ -1,5 +1,5 @@
 ===== Name
-cljs.core/loop
+special/loop
 
 ===== Signature
 [bindings*] body-exprs*
@@ -18,6 +18,11 @@ Acts as a 'recur' target, which will allow tail-call optimization.
   (when (> x 1)
     (println x)
     (recur (- x 2))))
+;; => 10
+;; => 8
+;; => 6
+;; => 4
+;; => 2
 ```
 
 ===== Related
