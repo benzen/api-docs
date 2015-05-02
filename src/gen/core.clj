@@ -1,5 +1,6 @@
 (ns gen.core
   (:require
+    [clojure.set :refer [difference]]
     [clojure.string :refer [split-lines join lower-case trim]]
     [clojure.pprint :refer [pprint]]
     [me.raynes.fs :refer [list-dir size]]
@@ -26,29 +27,36 @@
         body (trim (join "\n" body-lines))]
     [title body]))
 
-(defn example-ids
-  "Get ordered list of example title ids from a section pair (title,body)"
-  [pairs]
-  (->> pairs
-       (map first)
-       (filter #(.startsWith % "example"))))
-
-(defn pairs->map
-  "Convert the final parsed section title/body pairs to a map."
-  [pairs]
-  (-> (into {} pairs)
-      (assoc :example-ids (example-ids pairs))))
-
 (defn parse-doc
   "Convert cljsdoc content to a map of section title => section body text."
   [content]
-  (->> (split-lines content)
-       (partition-by section-line?)
-       (drop-while (comp not section-line? first)) ;; ignore lines preceding first section
-       (partition 2) ;; create section-body pairs
-       (map format-section)
-       (remove #(= (second %) "")) ;; remove empty sections
-       pairs->map))
+  (let [lines (split-lines content)
+
+        ;; parse content as a list of section title/body pairs
+        pairs (->> lines
+                   (partition-by section-line?)
+                   (drop-while (comp not section-line? first)) ;; ignore lines preceding first section
+                   (partition 2) ;; create title/body lines pairs
+                   (map format-section)
+                   (remove #(= (second %) ""))) ;; remove empty sections
+
+        ;; get the set of empty sections
+        all-titles (->> lines
+                        (filter section-line?)
+                        (map format-title)
+                        (apply hash-set))
+        titles (map first pairs)
+        empty-titles (->> (apply hash-set titles)
+                          (difference all-titles))
+
+        ;; get example order
+        examples (filter #(.startsWith % "example") titles)
+
+        ;; final structure
+        result (-> (into {} pairs)
+                   (assoc :example-ids examples
+                          :empty-sections empty-titles))]
+    result))
 
 ;;----------------------------------------------------------------------
 ;; .cljsdoc transforming
