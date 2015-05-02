@@ -8,6 +8,10 @@
 (def docs-outfile "docs.edn")
 (def min-docs-outfile "docs.min.edn")
 
+;;----------------------------------------------------------------------
+;; .cljsdoc parsing
+;;----------------------------------------------------------------------
+
 (defn section-line? [line]
   (.startsWith line "====="))
 
@@ -19,7 +23,7 @@
   (If there was no empty line between this title and the last, they will be grouped.)"
   [[title-lines body-lines]]
   (let [title (-> title-lines last format-title) ;; ignore all but last title
-        body (join "\n" body-lines)]
+        body (trim (join "\n" body-lines))]
     [title body]))
 
 (defn example-ids
@@ -36,21 +40,29 @@
       (assoc :example-ids (example-ids pairs))))
 
 (defn parse-doc
-  "Convert cljsdoc content to a map of section title => section body text.
-  Plus "
+  "Convert cljsdoc content to a map of section title => section body text."
   [content]
   (->> (split-lines content)
        (partition-by section-line?)
        (drop-while (comp not section-line? first)) ;; ignore lines preceding first section
        (partition 2) ;; create section-body pairs
        (map format-section)
+       (remove #(= (second %) "")) ;; remove empty sections
        pairs->map))
+
+;;----------------------------------------------------------------------
+;; .cljsdoc transforming
+;;----------------------------------------------------------------------
 
 (defn valid-doc? [doc]
   true)
 
 (defn transform-doc [doc]
   doc)
+
+;;----------------------------------------------------------------------
+;; main
+;;----------------------------------------------------------------------
 
 (defn build-doc
   [filename]

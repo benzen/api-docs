@@ -4,6 +4,7 @@
                  [clojure-humanize "0.1.0"]]
 
   :source-paths ["src"]
+  :test-paths ["test"]
 
   :main gen.core
   )
