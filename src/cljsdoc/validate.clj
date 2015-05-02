@@ -1,7 +1,8 @@
 (ns cljsdoc.validate
   (:refer-clojure :exclude [replace])
   (:require
-    [clojure.string :refer [replace]]))
+    [clojure.string :refer [replace]]
+    [clansi.core :refer [style]]))
 
 (defn encode-symbol
   [s]
@@ -36,9 +37,11 @@
         valid? (empty? error-messages)]
     (when-not valid?
       (binding [*out* *err*]
-        (println "----------------------------------------")
-        (println "ERRORS in" (:filename doc) "...\n")
+        (println "----------------------------------------------------------------")
+        (println (style "ERRORS" :red) (style (:filename doc) :cyan))
+        (println)
         (doseq [msg error-messages]
           (println msg))
-        (println "----------------------------------------\n")))
+        (println "----------------------------------------------------------------")
+        (println)))
     valid?))
