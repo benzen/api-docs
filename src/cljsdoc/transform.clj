@@ -58,10 +58,18 @@
         (apply dissoc d example-names))
       doc)))
 
+(defn transform-related [doc]
+  (if-let [related (get doc "related")]
+    (-> doc
+        (assoc :related (section-as-list related))
+        (dissoc "related"))
+    doc))
+
 (defn transform-doc [doc]
   (-> doc
       transform-name
       transform-description
       transform-signature
       transform-type
-      transform-examples))
+      transform-examples
+      transform-related))

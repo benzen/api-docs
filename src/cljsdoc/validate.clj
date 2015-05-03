@@ -3,9 +3,34 @@
     [java.util.regex Pattern])
   (:require
     [cljsdoc.utils :refer [read-forms encode-symbol example-hash]]
-    [clojure.string :refer [join]]
+    [me.raynes.fs :refer [exists?]]
+    [clojure.string :refer [split split-lines join]]
     [clansi.core :refer [style]]
     [fuzzy-matcher.core :as fuzzy]))
+
+;;--------------------------------------------------------------------------------
+;; Get known ClojureScript symbols
+;;--------------------------------------------------------------------------------
+
+(def known-symbols-url
+  "The latest symbols auto-detected from clojurescript's code base."
+  "https://raw.githubusercontent.com/cljsinfo/api-docs-generated/docs/symbol-history")
+
+(def known-symbols
+  "Set of namespace-qualified symbols from cljs."
+  (atom nil))
+
+(defn known-symbol? [s]
+  (contains? @known-symbols s))
+
+(defn get-known-symbols! []
+  (reset! known-symbols
+    (->> (slurp known-symbols-url)
+         (split-lines)
+         (map #(split % #"\s+"))              ;; split into (name,history...)
+         (remove #(.startsWith (last %) "-")) ;; remove symbols not present in latest version
+         (map first)
+         (apply hash-set))))
 
 ;;--------------------------------------------------------------------------------
 ;; Required Sections
@@ -151,6 +176,23 @@
       (join "\n" msgs))))
 
 ;;--------------------------------------------------------------------------------
+;; Validate Related
+;;--------------------------------------------------------------------------------
+
+(defn related-missing-error-msg*
+  [name-]
+  (let [filename (str "docs/" (gen-filename name-))]
+    (when (and (not (exists? filename))
+               (not (known-symbol? name-)))
+      (str "Related symbol '" name- "' is an unknown symbol."))))
+
+(defn related-missing-error-msg
+  [{:keys [related] :as doc}]
+  (let [msgs (keep related-missing-error-msg* related)]
+    (when (seq msgs)
+      (join "\n" msgs))))
+
+;;--------------------------------------------------------------------------------
 ;; Validate All
 ;;--------------------------------------------------------------------------------
 
@@ -161,7 +203,8 @@
                           filename-error-msg
                           signatures-error-msg
                           type-error-msg
-                          examples-error-msg])
+                          examples-error-msg
+                          related-missing-error-msg])
         valid? (empty? error-messages)]
     (when-not valid?
       (binding [*out* *err*]

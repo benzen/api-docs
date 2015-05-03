@@ -5,7 +5,7 @@
     [clojure.contrib.humanize :refer [filesize]]
     [clansi.core :refer [style]]
     [cljsdoc.transform :refer [transform-doc]]
-    [cljsdoc.validate :refer [valid-doc?]]
+    [cljsdoc.validate :refer [valid-doc? get-known-symbols!]]
     [cljsdoc.parse :refer [parse-doc]]))
 
 (def docs-outfile "docs.edn")
@@ -54,6 +54,7 @@
 
 (defn -main
   [& args]
+  (get-known-symbols!)
   (let [skipped (build-docs)]
     (System/exit (if (pos? skipped) 1 0))))
 
