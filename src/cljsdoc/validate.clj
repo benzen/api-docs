@@ -2,7 +2,7 @@
   (:import
     [java.util.regex Pattern])
   (:require
-    [cljsdoc.utils :refer [read-forms encode-symbol]]
+    [cljsdoc.utils :refer [read-forms encode-symbol example-hash]]
     [clojure.string :refer [join]]
     [clansi.core :refer [style]]
     [fuzzy-matcher.core :as fuzzy]))
@@ -136,6 +136,21 @@
       (str "'" type- "' is not a valid type."))))
 
 ;;--------------------------------------------------------------------------------
+;; Validate Examples
+;;--------------------------------------------------------------------------------
+
+(defn example-error-msg
+  [i {:keys [id] :as example}]
+  (when (= "" id)
+    (str "Example " (inc i) " has no hash.  Try " (example-hash))))
+
+(defn examples-error-msg
+  [{:keys [examples] :as doc}]
+  (let [msgs (keep identity (map-indexed example-error-msg examples))]
+    (when (seq msgs)
+      (join "\n" msgs))))
+
+;;--------------------------------------------------------------------------------
 ;; Validate All
 ;;--------------------------------------------------------------------------------
 
@@ -145,7 +160,8 @@
                           unrecognized-sections-error-msg
                           filename-error-msg
                           signatures-error-msg
-                          type-error-msg])
+                          type-error-msg
+                          examples-error-msg])
         valid? (empty? error-messages)]
     (when-not valid?
       (binding [*out* *err*]
@@ -153,7 +169,5 @@
         (println (style "ERRORS" :red) (style (:filename doc) :cyan))
         (println)
         (doseq [msg error-messages]
-          (println msg))
-        (println "----------------------------------------------------------------")
-        (println)))
+          (println msg))))
     valid?))

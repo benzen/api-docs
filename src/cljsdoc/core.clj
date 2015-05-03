@@ -3,7 +3,7 @@
     [clojure.pprint :refer [pprint]]
     [me.raynes.fs :refer [list-dir size base-name]]
     [clojure.contrib.humanize :refer [filesize]]
-
+    [clansi.core :refer [style]]
     [cljsdoc.transform :refer [transform-doc]]
     [cljsdoc.validate :refer [valid-doc?]]
     [cljsdoc.parse :refer [parse-doc]]))
@@ -25,10 +25,10 @@
     (pos? skipped) (str ", skipped " skipped)
     true (str ".")))
 
-(defn show-created-file-status
+(defn created-file-status
   [filename]
   (let [size-str (filesize (size filename) :binary true)]
-    (println (str "Created " filename " (" size-str ")"))))
+    (str "Created " filename " (" size-str ")")))
 
 (defn cljsdoc-files [dir]
   (let [files (list-dir dir)]
@@ -43,9 +43,12 @@
     (spit docs-outfile output)
     (spit min-docs-outfile (pr-str docs))
 
+    (println "----------------------------------------------------------------")
+    (when (zero? skipped)
+      (println (style "No errors found." :green)))
     (println (format-status parsed skipped))
-    (show-created-file-status docs-outfile)
-    (show-created-file-status min-docs-outfile)
+    (println (created-file-status docs-outfile))
+    (println (created-file-status min-docs-outfile))
 
     skipped))
 

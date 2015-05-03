@@ -1,7 +1,8 @@
 (ns cljsdoc.transform
+  (:refer-clojure :exclude [replace])
   (:require
     [clojure.set :refer [rename-keys]]
-    [clojure.string :refer [split-lines trim lower-case]]))
+    [clojure.string :refer [split-lines trim lower-case replace]]))
 
 (defn section-as-list
   "Turn section body text into non-empty trimmed lines vector"
@@ -41,9 +42,26 @@
         (dissoc "type"))
     doc))
 
+(defn make-example
+  [name- doc]
+  {:id (replace name- #"example#?" "")
+   ;; TODO: markdown process content
+   :content (get doc name-)})
+
+(defn transform-examples [doc]
+  (let [example? #(re-find #"^example(#[a-z0-9]+)?$" %)
+        example-names (filter example? (:sections doc))
+        examples (map #(make-example % doc) example-names)]
+    (if (seq examples)
+      (as-> doc d
+        (assoc d :examples examples)
+        (apply dissoc d example-names))
+      doc)))
+
 (defn transform-doc [doc]
   (-> doc
       transform-name
       transform-description
       transform-signature
-      transform-type))
+      transform-type
+      transform-examples))

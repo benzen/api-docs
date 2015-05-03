@@ -30,3 +30,7 @@
         (recur (conj! forms f))
         (persistent! forms)))))
 
+(defn example-hash
+  "Generate a unique hash used for example-linking."
+  []
+  (-> (java.util.UUID/randomUUID) str (subs 0 6)))
