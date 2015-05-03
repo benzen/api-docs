@@ -1,8 +1,11 @@
 (ns cljsdoc.validate
+  (:import
+    [java.util.regex Pattern])
   (:require
     [cljsdoc.utils :refer [read-forms encode-symbol]]
     [clojure.string :refer [join]]
-    [clansi.core :refer [style]]))
+    [clansi.core :refer [style]]
+    [fuzzy-matcher.core :as fuzzy]))
 
 ;;--------------------------------------------------------------------------------
 ;; Required Sections
@@ -31,6 +34,7 @@
 
 (def recognized-sections
   ["name"
+   "type"
    "description"
    "signature"
    "todo"
@@ -40,6 +44,35 @@
    "related"
    "docstring"
    "history"])
+
+(defn section-match?
+  [name- known]
+  (if (instance? Pattern known)
+    (re-find known name-)
+    (= known name-)))
+
+(defn similar-section
+  [name-]
+  (let [knowns (filter string? recognized-sections)
+        candidates (fuzzy/search name- knowns)]
+    (first candidates)))
+
+(defn recognized-section?
+  [name-]
+  (some #(section-match? name- %) recognized-sections))
+
+(defn unrecognized-section-error-msg
+  [name-]
+  (when-not (recognized-section? name-)
+    (let [similar (similar-section name-)]
+      (cond-> (str "'" name- "' is not a recognized section")
+        similar (str ", did you mean '" similar "'?")))))
+
+(defn unrecognized-sections-error-msg
+  [doc]
+  (let [msgs (keep unrecognized-section-error-msg (:sections doc))]
+    (when (seq msgs)
+      (join "\n" msgs))))
 
 ;;--------------------------------------------------------------------------------
 ;; Validate Filename
@@ -108,6 +141,7 @@
 (defn valid-doc? [doc]
   (let [error-messages (keep #(% doc)
                          [required-sections-error-msg
+                          unrecognized-sections-error-msg
                           filename-error-msg
                           signatures-error-msg
                           type-error-msg])
