@@ -196,15 +196,18 @@
 ;; Validate All
 ;;--------------------------------------------------------------------------------
 
+(def error-detectors
+  "All error detectors, each producing error messages if errors found."
+  [required-sections-error-msg
+   unrecognized-sections-error-msg
+   filename-error-msg
+   signatures-error-msg
+   type-error-msg
+   examples-error-msg
+   related-missing-error-msg])
+
 (defn valid-doc? [doc]
-  (let [error-messages (keep #(% doc)
-                         [required-sections-error-msg
-                          unrecognized-sections-error-msg
-                          filename-error-msg
-                          signatures-error-msg
-                          type-error-msg
-                          examples-error-msg
-                          related-missing-error-msg])
+  (let [error-messages (keep #(% doc) error-detectors)
         valid? (empty? error-messages)]
     (when-not valid?
       (binding [*out* *err*]
