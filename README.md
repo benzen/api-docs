@@ -6,11 +6,18 @@ to create all the information for a symbol's doc page.
 Please see the __[api-docs-report]__ for file format details and progress.
 
 To help __validate__ the large amount of docs we have, we are implementing a
-cljsdoc file parser and validator that will run via travis-ci.  To run the
-tests locally:
+cljsdoc file parser and validator that will run via travis-ci.
+
+To test the parser/validator is working as expected:
 
 ```
 lein test
+```
+
+To parse/validate all the cljsdoc files and produce a `docs.edn` structure:
+
+```
+lein run
 ```
 
 [api-docs-report]:http://cljsinfo.github.io/api-docs-report/
