@@ -1,22 +1,9 @@
 (ns cljsdoc.validate
   (:refer-clojure :exclude [replace])
   (:require
-    [cljsdoc.utils :refer [read-forms]]
+    [cljsdoc.utils :refer [read-forms encode-symbol]]
     [clojure.string :refer [replace join]]
     [clansi.core :refer [style]]))
-
-(defn encode-symbol
-  [s]
-  (-> s
-      (replace "." "DOT")
-      (replace ">" "GT")
-      (replace "<" "LT")
-      (replace "!" "BANG")
-      (replace "?" "QMARK")
-      (replace "*" "STAR")
-      (replace "+" "PLUS")
-      (replace "=" "EQ")
-      (replace "/" "SLASH")))
 
 (defn gen-filename
   "Generates expected filename from a namespace qualified symbol string"
