@@ -30,22 +30,21 @@
                    (map format-section)
                    (remove #(= (second %) ""))) ;; remove empty sections
 
+        ;; get titles in order
+        titles (map first pairs)
+
         ;; get the set of empty sections
         all-titles (->> lines
                         (filter section-line?)
                         (map format-title)
                         (apply hash-set))
-        titles (map first pairs)
         empty-titles (->> (apply hash-set titles)
                           (difference all-titles))
-
-        ;; get example order
-        examples (filter #(.startsWith % "example") titles)
 
         ;; final structure
         result (-> (into {} pairs)
                    (assoc :filename filename
-                          :example-ids examples
+                          :sections titles
                           :empty-sections empty-titles))]
     result))
 

@@ -46,7 +46,7 @@ N/A
    "example#2" "N/A"
    "example#3" "N/A"
    :filename "cljs.core_foo.cljsdoc"
-   :example-ids ["example#1" "example#2" "example#3"]
+   :sections ["name" "description" "example#1" "example#2" "example#3"]
    :empty-sections #{"empty1"
                      "empty2"
                      "empty3"
