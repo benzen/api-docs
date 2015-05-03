@@ -16,7 +16,15 @@
       (-> doc
           (assoc :full-name (first names)
                  :queries (rest names))
-        (dissoc "name")))
+          (dissoc "name")))
+    doc))
+
+(defn transform-description [doc]
+  (if-let [desc (get doc "description")]
+    (-> doc
+        ;; TODO: markdown process desc
+        (assoc :description desc)
+        (dissoc "description"))
     doc))
 
 (defn transform-signature [doc]
@@ -36,5 +44,6 @@
 (defn transform-doc [doc]
   (-> doc
       transform-name
+      transform-description
       transform-signature
       transform-type))

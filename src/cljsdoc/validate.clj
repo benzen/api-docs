@@ -4,6 +4,32 @@
     [clojure.string :refer [join]]
     [clansi.core :refer [style]]))
 
+;;--------------------------------------------------------------------------------
+;; Required Sections
+;;--------------------------------------------------------------------------------
+
+(def required-doc-keys
+  [:full-name
+   :description])
+
+(defn required-section-error-msg
+  "Returns error message if section name is not present in doc."
+  [name- doc]
+  (let [section (get doc name-)]
+    (when-not section
+      (str "'" (name name-) "' is a required section."))))
+
+(defn required-sections-error-msg
+  "Returns error messages if required sections are not present in doc."
+  [doc]
+  (let [msgs (keep #(required-section-error-msg % doc) required-doc-keys)]
+    (when (seq msgs)
+      (join "\n" msgs))))
+
+;;--------------------------------------------------------------------------------
+;; Validate Filename
+;;--------------------------------------------------------------------------------
+
 (defn gen-filename
   "Generates expected filename from a namespace qualified symbol string"
   [fullname]
@@ -14,9 +40,14 @@
 (defn filename-error-msg
   "If filename is not valid, return error message."
   [{:keys [full-name filename] :as doc}]
-  (let [expected (gen-filename full-name)]
-    (when (not= filename expected)
-      (str full-name " should be in a file called " expected))))
+  (when full-name
+    (let [expected (gen-filename full-name)]
+      (when (not= filename expected)
+        (str full-name " should be in a file called " expected)))))
+
+;;--------------------------------------------------------------------------------
+;; Validate Signature
+;;--------------------------------------------------------------------------------
 
 (defn signature-error-msg
   "If signature is not valid, return error message."
@@ -33,6 +64,10 @@
   (let [msgs (keep signature-error-msg signature)]
     (when (seq msgs)
       (join "\n" msgs))))
+
+;;--------------------------------------------------------------------------------
+;; Validate Type
+;;--------------------------------------------------------------------------------
 
 (def valid-type?
   #{"function"
@@ -51,9 +86,14 @@
     (when-not (valid-type? type-)
       (str "'" type- "' is not a valid type."))))
 
+;;--------------------------------------------------------------------------------
+;; Validate All
+;;--------------------------------------------------------------------------------
+
 (defn valid-doc? [doc]
   (let [error-messages (keep #(% doc)
-                         [filename-error-msg
+                         [required-sections-error-msg
+                          filename-error-msg
                           signatures-error-msg
                           type-error-msg])
         valid? (empty? error-messages)]
