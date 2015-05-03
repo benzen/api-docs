@@ -35,6 +35,7 @@
 (def recognized-sections
   ["name"
    "type"
+   "return type"
    "description"
    "signature"
    "todo"
