@@ -1,8 +1,7 @@
 (ns cljsdoc.validate
   (:refer-clojure :exclude [replace])
   (:require
-    [clojure.tools.reader :as reader]
-    [clojure.tools.reader.reader-types :as readers]
+    [cljsdoc.utils :refer [read-forms]]
     [clojure.string :refer [replace join]]
     [clansi.core :refer [style]]))
 
@@ -32,17 +31,6 @@
   (let [expected (gen-filename full-name)]
     (when (not= filename expected)
       (str full-name " should be in a file called " expected))))
-
-(defn read-forms
-  "Replacement for read-string. Reads all forms from string."
-  [s]
-  (let [r (readers/string-push-back-reader s)]
-    (loop [forms (transient [])]
-      (if-let [f (try (reader/read r)
-                      (catch Exception e
-                        (when-not (= (.getMessage e) "EOF") (throw e))))]
-        (recur (conj! forms f))
-        (persistent! forms)))))
 
 (defn signature-error-msg [sig]
   (let [forms (try (read-forms sig) (catch Exception e nil))]
