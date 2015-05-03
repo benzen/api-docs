@@ -4,6 +4,7 @@
     [me.raynes.fs :refer [list-dir size base-name]]
     [clojure.contrib.humanize :refer [filesize]]
     [clansi.core :refer [style]]
+    [cljsdoc.config :refer [docs-dir]]
     [cljsdoc.transform :refer [transform-doc]]
     [cljsdoc.validate :refer [valid-doc? get-known-symbols!]]
     [cljsdoc.parse :refer [parse-doc]]))
@@ -35,7 +36,7 @@
     (filter #(.endsWith (.getName %) ".cljsdoc") files)))
 
 (defn build-docs []
-  (let [files (cljsdoc-files "docs")
+  (let [files (cljsdoc-files docs-dir)
         docs (keep build-doc files)
         skipped (- (count files) (count docs))
         parsed (- (count files) skipped)

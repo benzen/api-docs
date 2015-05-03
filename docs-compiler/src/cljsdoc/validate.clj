@@ -2,6 +2,7 @@
   (:import
     [java.util.regex Pattern])
   (:require
+    [cljsdoc.config :refer [docs-dir]]
     [cljsdoc.utils :refer [read-forms encode-symbol example-hash]]
     [me.raynes.fs :refer [exists?]]
     [clojure.string :refer [split split-lines join]]
@@ -181,7 +182,7 @@
 
 (defn related-missing-error-msg*
   [name-]
-  (let [filename (str "docs/" (gen-filename name-))]
+  (let [filename (str docs-dir "/" (gen-filename name-))]
     (when (and (not (exists? filename))
                (not (known-symbol? name-)))
       (str "Related symbol '" name- "' is an unknown symbol."))))
