@@ -1,8 +1,7 @@
 (ns cljsdoc.validate
-  (:refer-clojure :exclude [replace])
   (:require
     [cljsdoc.utils :refer [read-forms encode-symbol]]
-    [clojure.string :refer [replace join]]
+    [clojure.string :refer [join]]
     [clansi.core :refer [style]]))
 
 (defn gen-filename
@@ -22,9 +21,10 @@
 (defn signature-error-msg
   "If signature is not valid, return error message."
   [sig]
-  (let [forms (try (read-forms sig) (catch Exception e nil))]
-    (when (or (> 1 (count forms))
-              (not (vector? (first forms))))
+  (let [forms (try (read-forms sig) (catch Exception e nil))
+        valid? (and (= 1 (count forms))
+                    (vector? (first forms)))]
+    (when-not valid?
       (str "signature " (pr-str sig) " must be a single valid vector"))))
 
 (defn signatures-error-msg
