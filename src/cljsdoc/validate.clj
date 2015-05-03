@@ -34,10 +34,28 @@
     (when (seq msgs)
       (join "\n" msgs))))
 
+(def valid-type?
+  #{"function"
+    "macro"
+    "special form"
+    "special form (repl)"
+    "macro character"
+    "syntax"
+    "tagged literal"
+    "special var"})
+
+(defn type-error-msg
+  "If type is not valid, return error message."
+  [doc]
+  (when-let [type- (:type doc)]
+    (when-not (valid-type? type-)
+      (str "'" type- "' is not a valid type."))))
+
 (defn valid-doc? [doc]
   (let [error-messages (keep #(% doc)
                          [filename-error-msg
-                          signatures-error-msg])
+                          signatures-error-msg
+                          type-error-msg])
         valid? (empty? error-messages)]
     (when-not valid?
       (binding [*out* *err*]

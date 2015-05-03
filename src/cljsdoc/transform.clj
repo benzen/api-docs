@@ -1,7 +1,7 @@
 (ns cljsdoc.transform
   (:require
     [clojure.set :refer [rename-keys]]
-    [clojure.string :refer [split-lines trim]]))
+    [clojure.string :refer [split-lines trim lower-case]]))
 
 (defn section-as-list
   "Turn section body text into non-empty trimmed lines vector"
@@ -27,7 +27,11 @@
     doc))
 
 (defn transform-type [doc]
-  (rename-keys doc {"type" :type}))
+  (if-let [type- (get doc "type")]
+    (-> doc
+        (assoc :type (lower-case type-))
+        (dissoc "type"))
+    doc))
 
 (defn transform-doc [doc]
   (-> doc
