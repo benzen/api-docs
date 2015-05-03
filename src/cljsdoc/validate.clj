@@ -8,21 +8,20 @@
 ;; Required Sections
 ;;--------------------------------------------------------------------------------
 
-(def required-doc-keys
-  [:full-name
-   :description])
+(def required-sections
+  ["name"
+   "description"])
 
 (defn required-section-error-msg
   "Returns error message if section name is not present in doc."
   [name- doc]
-  (let [section (get doc name-)]
-    (when-not section
-      (str "'" (name name-) "' is a required section."))))
+  (when-not (some #{name-} (:sections doc))
+    (str "'" (name name-) "' is a required section.")))
 
 (defn required-sections-error-msg
   "Returns error messages if required sections are not present in doc."
   [doc]
-  (let [msgs (keep #(required-section-error-msg % doc) required-doc-keys)]
+  (let [msgs (keep #(required-section-error-msg % doc) required-sections)]
     (when (seq msgs)
       (join "\n" msgs))))
 
