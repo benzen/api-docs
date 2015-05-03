@@ -32,13 +32,16 @@
     (when (not= filename expected)
       (str full-name " should be in a file called " expected))))
 
-(defn signature-error-msg [sig]
+(defn signature-error-msg
+  "If signature is not valid, return error message."
+  [sig]
   (let [forms (try (read-forms sig) (catch Exception e nil))]
     (when (or (> 1 (count forms))
               (not (vector? (first forms))))
       (str "signature " (pr-str sig) " must be a single valid vector"))))
 
 (defn signatures-error-msg
+  "If signatures are not valid, return all error messages."
   [{:keys [signature] :as doc}]
   (let [msgs (keep signature-error-msg signature)]
     (when (seq msgs)
