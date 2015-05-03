@@ -1,3 +1,4 @@
 language: clojure
 lein: lein
-script: cd docs-compiler && lein test && lein run
+before_install: cd docs-compiler
+script: lein test && lein run
