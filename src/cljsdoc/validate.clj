@@ -1,7 +1,9 @@
 (ns cljsdoc.validate
   (:refer-clojure :exclude [replace])
   (:require
-    [clojure.string :refer [replace]]
+    [clojure.tools.reader :as reader]
+    [clojure.tools.reader.reader-types :as readers]
+    [clojure.string :refer [replace join]]
     [clansi.core :refer [style]]))
 
 (defn encode-symbol
@@ -31,9 +33,33 @@
     (when (not= filename expected)
       (str full-name " should be in a file called " expected))))
 
+(defn read-forms
+  "Replacement for read-string. Reads all forms from string."
+  [s]
+  (let [r (readers/string-push-back-reader s)]
+    (loop [forms (transient [])]
+      (if-let [f (try (reader/read r)
+                      (catch Exception e
+                        (when-not (= (.getMessage e) "EOF") (throw e))))]
+        (recur (conj! forms f))
+        (persistent! forms)))))
+
+(defn signature-error-msg [sig]
+  (let [forms (try (read-forms sig) (catch Exception e nil))]
+    (when (or (> 1 (count forms))
+              (not (vector? (first forms))))
+      (str "signature " (pr-str sig) " must be a single valid vector"))))
+
+(defn signatures-error-msg
+  [{:keys [signature] :as doc}]
+  (let [msgs (keep signature-error-msg signature)]
+    (when (seq msgs)
+      (join "\n" msgs))))
+
 (defn valid-doc? [doc]
-  (let [error-funcs [filename-error-msg]
-        error-messages (keep #(% doc) error-funcs)
+  (let [error-messages (keep #(% doc)
+                         [filename-error-msg
+                          signatures-error-msg])
         valid? (empty? error-messages)]
     (when-not valid?
       (binding [*out* *err*]
