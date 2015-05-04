@@ -22,6 +22,24 @@ If `init` is supplied, it is evaluated and the result is assigned to `symbol`.
 and is used by many macros to define common elements (ie: `defn`, `defmacro`,
 etc).
 
+===== Example
+
+```
+(def valueless-name)
+(println value-less-name)
+;;=> nil
+
+(def my-global-symbol 42)
+(println my-global-symbol)
+;;=> 42
+
+(def complex-to-understand-value
+     "description of what this is about"
+     42)
+(println complex-to-understand-value)
+
+``` => 42
+
 ===== Related
 cljs.core/defn
 cljs.core/fn
