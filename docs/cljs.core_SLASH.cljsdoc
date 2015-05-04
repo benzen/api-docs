@@ -15,7 +15,7 @@ divided by all of the denominators.
 cljs.core/*
 cljs.core/quot
 
-===== Example#5fe621
+===== Example#824bb7
 
 ```
 (/ 6 3)
