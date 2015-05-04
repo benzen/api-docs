@@ -10,7 +10,7 @@ syntax
 
 `true` or `false`
 
-===== Example
+===== Example#1afc59
 
 ```
 true
@@ -22,7 +22,7 @@ false
 
 ===== Related
 cljs.core/boolean
-cljs.core/if
+special/if
 cljs.core/if-not
 cljs.core/not
 cljs.core/cond
