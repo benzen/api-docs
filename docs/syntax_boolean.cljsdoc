@@ -10,6 +10,20 @@ syntax
 
 `true` or `false`
 
+===== Example
+
+```
+true
+;;=> true
+
+false
+;;=> false
+```
+
 ===== Related
 cljs.core/boolean
+cljs.core/if
+cljs.core/if-not
+cljs.core/not
+cljs.core/cond
 
