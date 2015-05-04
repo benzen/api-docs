@@ -15,4 +15,3 @@ Returns a sequence on the collection. If the collection is empty, returns nil.
 ===== Related
 cljs.core/seq?
 cljs.core/empty?
-cljs.core/iterator-seq

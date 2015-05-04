@@ -15,7 +15,7 @@ For interop, the `..` macro allows method/property chaining on the given JavaScr
 It essentially combines the thread-first `->` macro with the `.` operator.
 
 ===== Related
-cljs.core/.
+special/.
 cljs.core/->
 cljs.core/doto
 

@@ -17,7 +17,7 @@ be <= (count vector).
 Returns coll.
 
 ===== Related
-cljs.core/transient!
+cljs.core/transient
 cljs.core/persistent!
 
 ===== Example#7d1e6b

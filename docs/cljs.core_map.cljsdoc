@@ -22,7 +22,6 @@ Returns a transducer when no collection is provided.
 
 ===== Related
 cljs.core/map-indexed
-cljs.core/pmap
 cljs.core/amap
 cljs.core/mapcat
 cljs.core/keep

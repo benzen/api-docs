@@ -21,7 +21,7 @@ modifiers are: `:let [binding-form expr ...]`, `:while test`, `:when test`.
 ===== Related
 cljs.core/doseq
 cljs.core/doall
-cljs.core/recur
+special/recur
 
 ===== TODO
 
