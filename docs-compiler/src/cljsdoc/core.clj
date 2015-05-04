@@ -45,8 +45,10 @@
     (spit min-docs-outfile (pr-str docs))
 
     (println "----------------------------------------------------------------")
-    (when (zero? skipped)
-      (println (style "No errors found." :green)))
+    (println)
+    (if (zero? skipped)
+      (println (style "Done with no errors." :green))
+      (println (style "Done with some errors." :red)))
     (println (format-status parsed skipped))
     (println (created-file-status docs-outfile))
     (println (created-file-status min-docs-outfile))

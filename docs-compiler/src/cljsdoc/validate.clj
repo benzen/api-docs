@@ -198,7 +198,7 @@
 ;;--------------------------------------------------------------------------------
 
 (def error-detectors
-  "All error detectors, each producing error messages if errors found."
+  "All error detectors, each producing error messages if problem found."
   [required-sections-error-msg
    unrecognized-sections-error-msg
    filename-error-msg
@@ -207,14 +207,28 @@
    examples-error-msg
    related-missing-error-msg])
 
+(def warning-detectors
+  "All warning detectors, each produce warning messages if potential problem found."
+  [
+   ])
+
 (defn valid-doc? [doc]
-  (let [error-messages (keep #(% doc) error-detectors)
-        valid? (empty? error-messages)]
-    (when-not valid?
+  (let [errors   (seq (keep #(% doc) error-detectors))
+        warnings (seq (keep #(% doc) warning-detectors))
+        valid? (not errors)]
+    (when (or warnings errors)
       (binding [*out* *err*]
         (println "----------------------------------------------------------------")
-        (println (style "ERRORS" :red) (style (:filename doc) :cyan))
         (println)
-        (doseq [msg error-messages]
-          (println msg))))
+        (println (style (:filename doc) :cyan))
+        (when errors
+          (println)
+          (println (style "ERRORS" :red))
+          (doseq [msg errors]
+            (println msg)))
+        (when warnings
+          (println)
+          (println (style "WARNINGS" :yellow))
+          (doseq [msg warnings]
+            (println msg)))))
     valid?))
