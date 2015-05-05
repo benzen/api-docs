@@ -30,3 +30,10 @@
         (recur (conj! forms f))
         (persistent! forms)))))
 
+(defn gen-filename
+  "Generates expected filename from a namespace qualified symbol string"
+  [fullname]
+  (let [split-symbol (juxt namespace name)
+        [ns- name-] (-> fullname symbol split-symbol)]
+    (str ns- "_" (encode-symbol name-) ".cljsdoc")))
+

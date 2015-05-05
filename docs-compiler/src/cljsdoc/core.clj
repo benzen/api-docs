@@ -1,17 +1,14 @@
 (ns cljsdoc.core
   (:require
     [clojure.pprint :refer [pprint]]
-    [me.raynes.fs :refer [list-dir size base-name]]
-    [clojure.contrib.humanize :refer [filesize]]
+    [me.raynes.fs :refer [list-dir base-name]]
     [clansi.core :refer [style]]
+    [cljsdoc.builds :as builds]
     [cljsdoc.autodocs :refer [get-autodocs!]]
     [cljsdoc.config :refer [docs-dir]]
     [cljsdoc.transform :refer [transform-doc]]
     [cljsdoc.validate :refer [valid-doc?]]
     [cljsdoc.parse :refer [parse-doc]]))
-
-(def docs-outfile "docs.edn")
-(def min-docs-outfile "docs.min.edn")
 
 (defn build-doc
   [file]
@@ -27,23 +24,17 @@
     (pos? skipped) (str ", skipped " skipped)
     true (str ".")))
 
-(defn created-file-status
-  [filename]
-  (let [size-str (filesize (size filename) :binary true)]
-    (str "Created " filename " (" size-str ")")))
-
 (defn cljsdoc-files [dir]
   (let [files (list-dir dir)]
     (filter #(.endsWith (.getName %) ".cljsdoc") files)))
 
 (defn build-docs []
   (let [files (cljsdoc-files docs-dir)
-        docs (keep build-doc files)
-        skipped (- (count files) (count docs))
-        parsed (- (count files) skipped)
-        output (with-out-str (pprint docs))]
-    (spit docs-outfile output)
-    (spit min-docs-outfile (pr-str docs))
+        mandocs (keep build-doc files)
+        mandoc-map (zipmap (map :full-name mandocs)
+                           (map #(dissoc % :empty-sections) mandocs))
+        skipped (- (count files) (count mandocs))
+        parsed (- (count files) skipped)]
 
     (println "----------------------------------------------------------------")
     (println)
@@ -51,8 +42,9 @@
       (println (style "Done with no errors." :green))
       (println (style "Done with some errors." :red)))
     (println (format-status parsed skipped))
-    (println (created-file-status docs-outfile))
-    (println (created-file-status min-docs-outfile))
+
+    (builds/full! mandoc-map)
+    (builds/report! mandoc-map)
 
     skipped))
 

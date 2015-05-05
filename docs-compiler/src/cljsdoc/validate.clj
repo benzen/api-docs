@@ -4,7 +4,7 @@
   (:require
     [cljsdoc.autodocs :refer [autodoc-map]]
     [cljsdoc.config :refer [docs-dir]]
-    [cljsdoc.utils :refer [read-forms encode-symbol]]
+    [cljsdoc.utils :refer [read-forms encode-symbol gen-filename]]
     [me.raynes.fs :refer [exists?]]
     [clojure.string :refer [split split-lines join]]
     [clansi.core :refer [style]]
@@ -81,13 +81,6 @@
 ;;--------------------------------------------------------------------------------
 ;; Validate Filename
 ;;--------------------------------------------------------------------------------
-
-(defn gen-filename
-  "Generates expected filename from a namespace qualified symbol string"
-  [fullname]
-  (let [split-symbol (juxt namespace name)
-        [ns- name-] (-> fullname symbol split-symbol)]
-    (str ns- "_" (encode-symbol name-) ".cljsdoc")))
 
 (defn filename-error-msg
   "If filename is not valid, return error message."
