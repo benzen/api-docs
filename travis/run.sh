@@ -36,8 +36,12 @@ if [ "${TRAVIS_PULL_REQUEST}" = "false" ]; then
   # choose production page
   mv index_prod.html index.html
 
-  # publish to website
+  # add creds
   echo "https://${GH_TOKEN}:@github.com" > .git/credentials
+  git config user.name "${GIT_NAME}"
+  git config user.email "${GIT_EMAIL}"
+
+  # publish
   git add .
   git commit -m "auto-update"
   git push origin gh-pages
