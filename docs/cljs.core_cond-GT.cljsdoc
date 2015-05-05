@@ -21,7 +21,7 @@ cljs.core/->>
 cljs.core/cond->>
 cljs.core/cond
 
-===== Example
+===== Example#f08338
 
 ```
 (def a 12)
