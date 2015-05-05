@@ -16,7 +16,7 @@ Note that, unlike `cond` branching, `cond->>` threading does not short circuit
 after the first true test expression.
 
 
-===== Example 
+===== Example#e07a05
 
 ```
 (def a 12)
