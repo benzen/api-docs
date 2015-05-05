@@ -4,4 +4,4 @@ install: travis/install.sh
 script: travis/run.sh
 env:
   global:
-  - secure: "eb++p0NkSZ0orJmd5NA3l4g34YHQBwTfTvlWKITbt2mOlZ9mHEY38B+mVi0LnKhMP+TNUuZ742lmlrdWpJIKbPCn+4UIY26QDizBjmkDleD6awsYqlvrq7yE7DlmGDYAReGDBYd7E0SmdvXMOUWgcjyIgXotVY7vzULYr6XwTwU="
+  - secure: "aVLlr0U5QtSjSN6zkbFdZLjvzvEzIaRAGWwmtZgEhsFDz1idQjEs8iWQDWDBVq1ogMV+ZcizFxnwfXEj8+KJ1bhtkWhKW1mVNAvGvyjh4cqvrMGzfoj7vmkMz2wR/aBf3fpEva/QS64lJ2zYOmcSwe6kWWvI2qzPkkS5TDedK9o="
