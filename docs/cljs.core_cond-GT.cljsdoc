@@ -34,7 +34,7 @@ cljs.core/cond
           (= a 12) (str ", and is 12 ")
           (> a 20) (str ", and is greater than 200 ")))
 
-;;12 is greater than 10 and is 12
+;;12 is greater than 10, and is 12
 ;;nil
 ```
 
