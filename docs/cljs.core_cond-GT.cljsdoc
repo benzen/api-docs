@@ -20,3 +20,17 @@ cljs.core/->
 cljs.core/->>
 cljs.core/cond->>
 cljs.core/cond
+
+===== Example
+
+```
+(def a 12)
+
+(cond-> a)
+;;=> 12
+
+(cond-> a
+        (< 10) (println "it's less than 10")
+        (= 12) (println "it's 12")
+        (> 200) (println "It's greatter than 200"))
+```
