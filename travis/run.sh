@@ -37,6 +37,7 @@ if [ "${TRAVIS_PULL_REQUEST}" = "false" ]; then
   mv index_prod.html index.html
 
   # add creds
+  git config credential.helper store
   echo "https://shaunlebron:${GH_TOKEN}@github.com" > .git/credentials
   git config user.name "${GIT_NAME}"
   git config user.email "${GIT_EMAIL}"
