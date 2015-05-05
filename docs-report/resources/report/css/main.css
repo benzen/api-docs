@@ -1,0 +1,213 @@
+body {
+  margin: 0;
+  background-color: #f7f7f7;
+  font-family: 'Open Sans', sans-serif;
+}
+
+code {
+  font-family:  'Inconsolata', monospace;
+  color: #555;
+
+}
+
+/*****************************************************/
+
+div#loading {
+  padding:80px;
+  color: #AAA;
+}
+
+div.header {
+  padding:40px 80px;
+  width: 840px;
+}
+
+div.header h1 {
+  font-family: 'Roboto Slab', serif;
+  font-weight: 300;
+  color: #333;
+}
+
+div.header h1 img {
+  vertical-align: middle;
+  height: 50px;
+}
+
+div.header h1 b {
+  font-weight: 400;
+}
+
+div.header p,
+div.header li {
+  color: #888;
+  max-width: 800px;
+  line-height: 1.6em;
+}
+
+div.header li {
+  list-style-type: square;
+}
+
+div.header p b {
+  color: #555;
+}
+
+div.header pre {
+  margin: 50px 0;
+  padding: 20px;
+  background-color: #fff;
+  border-top: 1px solid #EEE;
+  border-left: 1px solid #DDD;
+  border-right: 1px solid #EEE;
+  border-bottom: 1px solid #DDD;
+}
+
+div.header code {
+  padding: 4px;
+  background-color: #fff;
+  border: 1px solid #DDD;
+}
+
+div.header pre code {
+  border: 0;
+  padding: 0;
+}
+
+div.header h1 a {
+  font-size: 0.5em;
+  vertical-align: middle;
+}
+
+a {
+  text-decoration: none;
+  color: #0074d9;
+}
+
+/*****************************************************/
+
+div#symbol-table {
+  background: #FFF;
+  color: #333;
+  padding:40px 80px;
+}
+
+div#symbol-table h1 {
+  font-family: 'Roboto', serif;
+  font-weight: 100;
+  color: #888;
+}
+
+div#symbol-table h2 {
+  font-family: 'Roboto', serif;
+  font-weight: 300;
+  border-bottom: 1px solid #D7D7D7;
+  padding-bottom: 10px;
+  margin-top: 60px;
+}
+
+div#symbol-table p,
+div#symbol-table ul
+{
+  opacity: 0.6;
+}
+
+div#symbol-table .ns,
+div#symbol-table .symbol
+{
+  font-family: "Inconsolata", monospace;
+  font-size: 1.2em;
+}
+
+div#symbol-table .ns {
+  color: #BBB;
+}
+div#symbol-table .symbol {
+  color: #333;
+}
+
+div#symbol-table .corelib {
+  margin-top: 5px;
+  margin-left: 20px;
+  font-size: 0.8em;
+  opacity: 0.5;
+}
+
+div#symbol-table td {
+  background-color: #f7f7f7;
+  padding: 20px;
+  vertical-align: top;
+}
+
+div#symbol-table .manualdoc-column {
+  text-align: center;
+  min-width: 120px;
+}
+
+/* colors from: https://github.com/mrmrs/colors */
+div#symbol-table .red-bg {
+  background: #FF4136;
+}
+div#symbol-table .yellow-bg {
+  background: #FFDC00;
+}
+div#symbol-table .green-bg {
+  background: #01FF70; /* #2ECC40 */
+}
+div#symbol-table .gray-bg {
+  background: #DDD;
+  color: #777;
+}
+
+div#symbol-table .manual-examples {
+  font-size: 0.8em;
+  opacity: 0.6;
+}
+
+div#symbol-table .header-row td {
+  background: #FFF;
+  color: #333;
+  font-family: "Roboto Slab";
+  text-align: center;
+  border: 2px solid #EEE;
+  border-bottom: 2px solid #CCC;
+}
+
+div#symbol-table .legend-block {
+  display: inline-block;
+  width: 100px;
+  padding: 10px;
+  margin: 1px;
+}
+
+div#symbol-table .legend {
+  list-style-type: none;
+}
+
+div#symbol-table .overview-table {
+}
+
+div#symbol-table .symbol-box {
+  font-family: "Inconsolata", monospace;
+  opacity: 0.8;
+  display: inline-block;
+  padding: 10px;
+  margin: 1px;
+}
+
+a .symbol-box {
+  color: #333;
+}
+
+.autodoc-column {
+  color: #AAA;
+  text-align: center;
+}
+
+.ns-description {
+  /* pixel hack to quickly get the description next to the namespace title */
+  position: relative;
+  top: -55px;
+  left: 180px;
+  color: #AAA;
+  height: 0;
+}

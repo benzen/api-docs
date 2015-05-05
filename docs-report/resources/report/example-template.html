@@ -1,0 +1,12 @@
+<script src="js/uuid.js"></script>
+<script>
+var hash = uuid.v4().substring(0,6);
+var templateLines = [
+  "===== Example#" + hash,
+  "",
+  "```",
+  "```",
+  ""
+];
+document.write("<pre>"+templateLines.join("\n")+"</pre>");
+</script>
