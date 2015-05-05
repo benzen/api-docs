@@ -9,12 +9,6 @@ lein test
 lein run
 cd ..
 
-TRAVIS_PULL_REQUEST=false
-GH_TOKEN=$(cat ~/.ssh/gh)
-GIT_NAME="Shaun LeBron"
-GIT_EMAIL=shaunewilliams@gmail.com
-rm -rf docs-report/hosted
-
 if [ "${TRAVIS_PULL_REQUEST}" = "false" ]; then
 
   echo
