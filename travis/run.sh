@@ -2,8 +2,6 @@
 
 set -e
 
-echo $GH_TOKEN
-
 cd docs-compiler
 lein test
 lein run
@@ -20,7 +18,7 @@ if [ "${TRAVIS_PULL_REQUEST}" = "false" ]; then
   lein cljsbuild once report-prod
 
   # clone gh-pages branch
-  git clone --branch gh-pages https://github.com/cljsinfo/api-docs.git hosted
+  git clone --branch gh-pages https://shaunlebron:${GH_TOKEN}@github.com/cljsinfo/api-docs.git hosted
 
   pushd hosted
 
@@ -39,8 +37,8 @@ if [ "${TRAVIS_PULL_REQUEST}" = "false" ]; then
   mv index_prod.html index.html
 
   # add creds
-  git config credential.helper store
-  echo "https://shaunlebron:${GH_TOKEN}@github.com" > .git/credentials
+  #git config credential.helper store
+  #echo "https://shaunlebron:${GH_TOKEN}@github.com" > .git/credentials
   git config user.name "${GIT_NAME}"
   git config user.email "${GIT_EMAIL}"
 
