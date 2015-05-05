@@ -3,7 +3,7 @@
 These are manually created docs that will be merged over the [generated docs]
 to create all the information for a symbol's doc page.
 
-Please see the __[api-docs-report]__ for file format details and progress.
+Please see the __[visual report]__ for file format details and progress.
 
 ## Compiler
 
@@ -18,11 +18,15 @@ In the `docs-compiler/` directory, you can:
     lein test
     ```
 
-1. Parse/validate all the cljsdoc files and produce a `docs.edn` structure:
+1. Parse/validate all the cljsdoc files and produce edn structure files for different uses:
 
     ```
     lein run
     ```
 
-[api-docs-report]:http://cljsinfo.github.io/api-docs-report/
-[generated docs]:https://github.com/shaunlebron/cljs-api-docs
+## Report
+
+The `docs-report` directory contains the visual report code.
+
+[visual report]:http://cljsinfo.github.io/api-docs/
+[generated docs]:https://github.com/cljsinfo/api-docs-generator
