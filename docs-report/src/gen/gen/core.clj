@@ -4,7 +4,6 @@
     [clojure.java.shell :refer [sh]]
     [clojure.string :refer [replace join split split-lines trim]]
     [me.raynes.fs :refer [list-dir base-name exists? mkdir]]
-    [clojure.pprint :refer [pprint]]
     )
   (:import
     (java.net URLEncoder)))
@@ -129,7 +128,7 @@
                (get-corelib-notes)
                (get-examples-and-refs))
         filename "resources/report/symbol-data.edn" ]
-    (spit filename (with-out-str (pprint data)))
+    (spit filename (pr-str data))
     (println "Wrote to" filename))
 
   (System/exit 0))
