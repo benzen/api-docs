@@ -54,6 +54,7 @@ if [ "${TRAVIS_PULL_REQUEST}" = "false" ]; then
 
   if [ -z "$(git status --porcelain)" ]; then
 
+    echo
     echo "NO CHANGES TO PUBLISH!"
 
   else
@@ -63,7 +64,7 @@ if [ "${TRAVIS_PULL_REQUEST}" = "false" ]; then
 
     echo
     echo "PUBLISHING REPORT..."
-    git push origin gh-pages &> /dev/null
+    git push origin gh-pages &> /dev/null # prevent github token from being printed
 
   fi
 
