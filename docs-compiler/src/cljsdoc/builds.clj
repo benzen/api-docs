@@ -1,7 +1,9 @@
 (ns cljsdoc.builds
+  (:refer-clojure :exclude [replace])
   (:require
     [cljsdoc.autodocs :refer [autodoc-map]]
     [me.raynes.fs :refer [size]]
+    [clojure.string :refer [replace]]
     [clojure.contrib.humanize :refer [filesize]]
     ))
 
@@ -48,12 +50,14 @@
                            :manual-todos-left (some #{"todo"} (:sections %)))
                         mandoc-map)
 
-        output (mapmap #(select-keys %
-                          [:full-name :ns :name
-                           :auto-link
-                           :manual-link
-                           :manual-examples-count
-                           :manual-todos-left])
+        output (mapmap #(-> %
+                            (select-keys
+                              [:full-name :ns :name
+                               :auto-link
+                               :manual-link
+                               :manual-examples-count
+                               :manual-todos-left])
+                            (assoc :full-name-encode (replace (:filename %) #"\.cljsdoc$" "")))
                        (merge-with merge autodocs mandocs))]
     (spit-docs! filename output)))
 

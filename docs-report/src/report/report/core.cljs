@@ -6,7 +6,7 @@
     [hiccups.runtime]
     [ajax.core :refer [GET]]
     [cljs.core.async :refer [chan <! put! close!]]
-    [clojure.string :refer [join split split-lines]]
+    [clojure.string :refer [join split split-lines replace]]
     [hiccups.runtime]
     [ajax.core :refer [GET]]
     [markdown.core :refer [md->html]]))
@@ -65,6 +65,11 @@
   (let [color (get-color data)]
     (assoc data :color color)))
 
+(defn add-anchor-link
+  [data]
+  (let [link (replace (:full-name-encode data) #"\.cljsdoc$" "")]
+    (assoc data :anchor-link link)))
+
 (def ns-description
   {"syntax" "syntax forms (not in a namespace)"
    "special" "special forms (not in a namespace)"
@@ -92,7 +97,7 @@
         values (->> (vals new-data)
                     (map #(sort-by :name %))
                     (map #(map add-color %))
-                    doall)
+                    (map #(map add-anchor-link %)))
         result (->> (map vector (keys new-data) values)
                     (sort-by first sort-namespaces)
                     (filter first) ;; <--- TODO: remove symbols that failed to parse (indicated by nil namespace)
@@ -113,7 +118,7 @@
       desc])
 
    (for [s symbols]
-     [:a {:href (str "#" (:full-name-encode s))}
+     [:a {:href (str "#" (:anchor-link s))}
       [:div
        {:class (str "symbol-box " (:color s) "-bg")}
        (:name s)]])])
@@ -138,7 +143,7 @@
                   manual-examples-count
                   examples-count
                   examples-link
-                  full-name-encode
+                  anchor-link
                   color
                   clojuredocs
                   grimoire
@@ -146,8 +151,8 @@
                   corelib-link] :as s} symbols]
       [:tr
        [:td.symbol-column
-        [:a {:name full-name-encode
-             :href (str "#" full-name-encode)}
+        [:a {:name anchor-link
+             :href (str "#" anchor-link)}
          [:span.ns ns- "/"]
          [:span.symbol (:name s)]]
         (when corelib-link
