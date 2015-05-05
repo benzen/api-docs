@@ -2,36 +2,13 @@
   (:import
     [java.util.regex Pattern])
   (:require
+    [cljsdoc.autodocs :refer [autodoc-map]]
     [cljsdoc.config :refer [docs-dir]]
     [cljsdoc.utils :refer [read-forms encode-symbol]]
     [me.raynes.fs :refer [exists?]]
     [clojure.string :refer [split split-lines join]]
     [clansi.core :refer [style]]
     [fuzzy-matcher.core :as fuzzy]))
-
-;;--------------------------------------------------------------------------------
-;; Get known ClojureScript symbols
-;;--------------------------------------------------------------------------------
-
-(def known-symbols-url
-  "The latest symbols auto-detected from clojurescript's code base."
-  "https://raw.githubusercontent.com/cljsinfo/api-docs-generated/docs/symbol-history")
-
-(def known-symbols
-  "Set of namespace-qualified symbols from cljs."
-  (atom nil))
-
-(defn known-symbol? [s]
-  (contains? @known-symbols s))
-
-(defn get-known-symbols! []
-  (reset! known-symbols
-    (->> (slurp known-symbols-url)
-         (split-lines)
-         (map #(split % #"\s+"))              ;; split into (name,history...)
-         (remove #(.startsWith (last %) "-")) ;; remove symbols not present in latest version
-         (map first)
-         (apply hash-set))))
 
 ;;--------------------------------------------------------------------------------
 ;; Required Sections
@@ -207,7 +184,7 @@
   [name-]
   (let [filename (str docs-dir "/" (gen-filename name-))]
     (when (and (not (exists? filename))
-               (not (known-symbol? name-)))
+               (not (contains? @autodoc-map name-)))
       (str "Related symbol '" name- "' is an unknown symbol."))))
 
 (defn related-missing-error-msg

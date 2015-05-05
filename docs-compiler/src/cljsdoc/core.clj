@@ -4,9 +4,10 @@
     [me.raynes.fs :refer [list-dir size base-name]]
     [clojure.contrib.humanize :refer [filesize]]
     [clansi.core :refer [style]]
+    [cljsdoc.autodocs :refer [get-autodocs!]]
     [cljsdoc.config :refer [docs-dir]]
     [cljsdoc.transform :refer [transform-doc]]
-    [cljsdoc.validate :refer [valid-doc? get-known-symbols!]]
+    [cljsdoc.validate :refer [valid-doc?]]
     [cljsdoc.parse :refer [parse-doc]]))
 
 (def docs-outfile "docs.edn")
@@ -57,7 +58,7 @@
 
 (defn -main
   [& args]
-  (get-known-symbols!)
+  (get-autodocs!)
   (let [skipped (build-docs)]
     (System/exit (if (pos? skipped) 1 0))))
 
