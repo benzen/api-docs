@@ -2,6 +2,8 @@
 
 set -e
 
+echo $GH_TOKEN
+
 cd docs-compiler
 lein test
 lein run
