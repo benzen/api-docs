@@ -41,20 +41,28 @@ if [ "${TRAVIS_PULL_REQUEST}" = "false" ]; then
   # choose production page
   mv index_prod.html index.html
 
-  # add creds
-  #none of these worked on travis-ci (always failed authentication)
-  #git config credential.helper store
-  #echo "https://shaunlebron:${GH_TOKEN}@github.com" > .git/credentials
-  git config user.name "${GIT_NAME}"
-  git config user.email "${GIT_EMAIL}"
+  if [ -z "$(git status --porcelain)" ]; then
 
-  # publish
-  git add .
-  git commit -m "auto-update"
+    echo "NO CHANGES TO PUBLISH!"
 
-  echo
-  echo "PUBLISHING REPORT..."
-  git push origin gh-pages &> /dev/null
+  else
+
+    # add creds
+    #none of these worked on travis-ci (always failed authentication)
+    #git config credential.helper store
+    #echo "https://shaunlebron:${GH_TOKEN}@github.com" > .git/credentials
+    git config user.name "${GIT_NAME}"
+    git config user.email "${GIT_EMAIL}"
+
+    # publish
+    git add .
+    git commit -m "auto-update"
+
+    echo
+    echo "PUBLISHING REPORT..."
+    git push origin gh-pages &> /dev/null
+
+  fi
 
   popd # hosted
 
