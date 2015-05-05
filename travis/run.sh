@@ -9,6 +9,12 @@ lein test
 lein run
 cd ..
 
+TRAVIS_PULL_REQUEST=false
+GH_TOKEN=$(cat ~/.ssh/gh)
+GIT_NAME="Shaun LeBron"
+GIT_EMAIL=shaunewilliams@gmail.com
+rm -rf docs-report/hosted
+
 if [ "${TRAVIS_PULL_REQUEST}" = "false" ]; then
 
   echo
@@ -41,21 +47,24 @@ if [ "${TRAVIS_PULL_REQUEST}" = "false" ]; then
   # choose production page
   mv index_prod.html index.html
 
+
+  # add creds
+  #none of these worked on travis-ci (always failed authentication)
+  #git config credential.helper store
+  #echo "https://shaunlebron:${GH_TOKEN}@github.com" > .git/credentials
+  git config user.name "${GIT_NAME}"
+  git config user.email "${GIT_EMAIL}"
+
+  # add everything
+  git add .
+
   if [ -z "$(git status --porcelain)" ]; then
 
     echo "NO CHANGES TO PUBLISH!"
 
   else
 
-    # add creds
-    #none of these worked on travis-ci (always failed authentication)
-    #git config credential.helper store
-    #echo "https://shaunlebron:${GH_TOKEN}@github.com" > .git/credentials
-    git config user.name "${GIT_NAME}"
-    git config user.email "${GIT_EMAIL}"
-
     # publish
-    git add .
     git commit -m "auto-update"
 
     echo
