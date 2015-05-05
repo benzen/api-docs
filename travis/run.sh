@@ -2,12 +2,17 @@
 
 set -e
 
+echo
+echo "COMPILING DOCS..."
 cd docs-compiler
 lein test
 lein run
 cd ..
 
 if [ "${TRAVIS_PULL_REQUEST}" = "false" ]; then
+
+  echo
+  echo "BUILDING REPORT..."
 
   pushd docs-report
 
@@ -37,6 +42,7 @@ if [ "${TRAVIS_PULL_REQUEST}" = "false" ]; then
   mv index_prod.html index.html
 
   # add creds
+  #none of these worked on travis-ci (always failed authentication)
   #git config credential.helper store
   #echo "https://shaunlebron:${GH_TOKEN}@github.com" > .git/credentials
   git config user.name "${GIT_NAME}"
@@ -45,7 +51,10 @@ if [ "${TRAVIS_PULL_REQUEST}" = "false" ]; then
   # publish
   git add .
   git commit -m "auto-update"
-  git push origin gh-pages
+
+  echo
+  echo "PUBLISHING REPORT..."
+  git push origin gh-pages &> /dev/null
 
   popd # hosted
 
