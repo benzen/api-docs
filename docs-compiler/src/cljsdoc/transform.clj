@@ -12,11 +12,14 @@
        (remove #{""})))
 
 (defn transform-name [doc]
-  (if-let [name- (get doc "name")]
-    (let [names (section-as-list name-)]
+  (if-let [body (get doc "name")]
+    (let [[full-name & queries] (section-as-list body)
+          [ns- name-] ((juxt namespace name) (symbol full-name))]
       (-> doc
-          (assoc :full-name (first names)
-                 :queries (rest names))
+          (assoc :ns ns-
+                 :name name-
+                 :full-name full-name
+                 :queries queries)
           (dissoc "name")))
     doc))
 
