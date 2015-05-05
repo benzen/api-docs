@@ -2,10 +2,7 @@
 
 set -e
 
-# we start from the doc-compiler directory because travis-ci
-# needs to start from a directory with a project.clj file.
-
-# cd docs-compiler
+cd docs-compiler
 lein test
 lein run
 cd ..
@@ -39,11 +36,10 @@ if [ "${TRAVIS_PULL_REQUEST}" = "false" ]; then
   # choose production page
   mv index_prod.html index.html
 
-  git add .
-  git commit -m "auto-update"
-
   # publish to website
   echo "https://${GH_TOKEN}:@github.com" > .git/credentials
+  git add .
+  git commit -m "auto-update"
   git push origin gh-pages
 
   popd # hosted

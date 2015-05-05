@@ -1,7 +1,7 @@
 language: clojure
 lein: lein
-before_install: cd docs-compiler
-script: ../travis.sh
+install: travis/install.sh
+script: travis/run.sh
 env:
   global:
   - secure: "eb++p0NkSZ0orJmd5NA3l4g34YHQBwTfTvlWKITbt2mOlZ9mHEY38B+mVi0LnKhMP+TNUuZ742lmlrdWpJIKbPCn+4UIY26QDizBjmkDleD6awsYqlvrq7yE7DlmGDYAReGDBYd7E0SmdvXMOUWgcjyIgXotVY7vzULYr6XwTwU="
