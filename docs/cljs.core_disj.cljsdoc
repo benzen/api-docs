@@ -11,6 +11,21 @@ cljs.core/disj
 disj(oin). Returns a new set of the same (hashed/sorted) type, that does not
 contain key(s).
 
+
+===== Example
+
+```
+(disj #{:a :b :c} :c :d :e)
+;; => #{:b :a}
+
+(disj [1 2 3] 3 4 5)
+Error: No protocol method ISet.-disjoin defined for type cljs.core/PersistentVector
+
+
+(disj {:key "value" :key2 "value2"} {:key "value"})
+;; => Error: No protocol method ISet.-disjoin defined for type cljs.core/PersistentArrayMap
+```
+
 ===== Related
 cljs.core/dissoc
 cljs.core/disj!
