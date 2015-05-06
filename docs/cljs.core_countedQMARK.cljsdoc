@@ -11,3 +11,21 @@ Returns true if `x` executes `count` in constant time, false otherwise.
 Lists, maps, sets, strings, and vectors can be counted in constant time.
 
 ===== Related
+
+===== Example 
+
+```
+(counted? [1 2 3])
+;; => true
+
+(counted? {:key "value"})
+;; => true
+
+(counted? #{"a" "b"})
+;; => true
+
+(counted? 1)
+;; => false
+
+```
+
