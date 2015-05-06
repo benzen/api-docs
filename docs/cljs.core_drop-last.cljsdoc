@@ -11,7 +11,7 @@ Return a lazy sequence of all but the last `n` items in `s`.
 
 `n` defaults to 1.
 
-===== Example
+===== Example#60e547
 
 ```
 (drop-last [1 2 3 4])
