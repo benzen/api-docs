@@ -8,7 +8,7 @@ cljs.core/distinct
 
 Returns a lazy sequence of the elements of `coll` with duplicates removed.
 
-===== Example
+===== Example#8a556e
 
 ```
 (distinct (list 1 1 2 2 3 3))
