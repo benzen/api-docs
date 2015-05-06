@@ -13,5 +13,19 @@ Uses `def` to establish symbols of `names` with no bindings.
 
 Useful for making forward declarations.
 
+===== Example
+
+```
+a
+;; => WARNING: Use of undeclared Var
+
+(declare a)
+;;=> nil
+
+a
+;;=> nil
+
+```
+
 ===== Related
 special/def
