@@ -8,7 +8,7 @@ cljs.core/cycle
 
 Returns an infinite lazy sequence of repetitions of the items in `coll`.
 
-===== Example
+===== Example#93dc74
 
 ```
 (take 6 (cycle [1 2 3]))
