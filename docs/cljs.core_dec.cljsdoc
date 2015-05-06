@@ -8,5 +8,15 @@ cljs.core/dec
 
 Returns a number one less than `x`.
 
+===== Example
+
+```
+(dec 10)
+;;=> 9
+
+(dec (dec 10))
+;; => 8
+```
+
 ===== Related
 cljs.core/inc
