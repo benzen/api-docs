@@ -10,7 +10,7 @@
          '[me.raynes.fs :refer [glob base-name]]
          '[clojure.data.json :as json]
          '[clojure.pprint :refer [pprint]]
-         '[clojure.string :refer [trim]])
+         '[clojure.string :refer [trim join]])
 
 ;; use curl command
 (programs curl)
@@ -32,19 +32,17 @@
 (defn delete-asset
   [id]
   (let [url (str (releases-url "api") "assets/" id "?access_token=" gh-token)]
-    (println url)
     (pprint (curl "-X" "DELETE" url {:verbose true}))))
 
 (defn upload-asset
   [file]
-  (let [url (str \" (releases-url "uploads")
+  (let [filename (base-name file)
+        url (str (releases-url "uploads")
                  release "/assets"
-                 "?name=" (base-name file)
-                 "&access_token=" gh-token
-                 \")]
-    (println url)
+                 "?name=" filename
+                 "&access_token=" gh-token)]
     (pprint (curl "-X" "POST"
-                  "-H" "\"Content-Type:application/edn\""
+                  "-H" "Content-Type:application/edn"
                   "--data-binary" (str "@" (str file))
                   url
                   {:verbose true}))))
@@ -54,6 +52,8 @@
 
 ;; get files to upload
 (def files (glob "../docs-compiler/cljsdocs-*.edn"))
+(doseq [f files]
+  (println "detected file:" (base-name f)))
 
 (doseq [f files]
   (let [filename (base-name f)
@@ -61,9 +61,9 @@
 
     ;; delete existing asset
     (when existing-id
-      (println "Deleting" filename)
+      (println "\nDeleting previous release:" filename)
       (delete-asset existing-id))
 
     ;; upload new asset
-    (println "Uploading" filename)
+    (println "\nUploading new release:" filename)
     (upload-asset f)))
