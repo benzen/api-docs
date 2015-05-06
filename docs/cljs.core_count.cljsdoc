@@ -12,7 +12,7 @@ Returns the number of items in `x`.
 
 `(count nil)` returns 0.
 
-===== Example
+===== Example#96e470
 
 ```
 (count [1 2 3])
