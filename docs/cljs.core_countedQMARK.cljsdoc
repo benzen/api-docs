@@ -12,7 +12,7 @@ Lists, maps, sets, strings, and vectors can be counted in constant time.
 
 ===== Related
 
-===== Example 
+===== Example#cce6d6
 
 ```
 (counted? [1 2 3])
