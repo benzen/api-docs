@@ -12,6 +12,13 @@ which `(pred item)` returns logical false.
 
 Returns a stateful transducer when no collection is provided.
 
+===== Example
+
+```
+(drop-while even? [2 4 6 8 10 12 14 1])
+=> (1)
+```
+
 ===== Related
 cljs.core/take-while
 cljs.core/split-with
