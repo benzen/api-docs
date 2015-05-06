@@ -11,6 +11,16 @@ Return a lazy sequence of all but the last `n` items in `s`.
 
 `n` defaults to 1.
 
+===== Example
+
+```
+(drop-last [1 2 3 4])
+;; => [1 2 3]
+
+(drop-last 2 [1 2 3 4])
+;; => [1 2]
+```
+
 ===== Related
 cljs.core/drop
 cljs.core/drop-while
