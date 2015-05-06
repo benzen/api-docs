@@ -10,5 +10,26 @@ cljs.core/distinct?
 
 Returns true if no two of the arguments are `=`
 
+===== Example
+
+(distinct? [1 1 2 3])
+;; => true
+
+(distinct? [1 2 3])
+;; => true
+
+(distinct? #{:key })
+;; => Duplicate key: :key
+
+(distinct? #{:key })
+;; => true
+
+(distinct? {:key "value" :key "value"})
+;; => Duplicate key: :key
+
+(distinct? {:key "value" :key2 "value2"})
+;; => true
+```
+
 ===== Related
 cljs.core/distinct
