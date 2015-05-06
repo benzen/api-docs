@@ -71,4 +71,10 @@ if [ "${TRAVIS_PULL_REQUEST}" = "false" ]; then
   popd # hosted
 
   popd # docs-report
+
+  pushd travis
+  echo
+  echo "PUBLISHING DOCS..."
+  lein exec publish.clj
+  popd # travis
 fi
