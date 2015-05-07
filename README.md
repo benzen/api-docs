@@ -42,18 +42,17 @@ You don't have to leave your browser to contribute new/edited docs:
 
 1. [Click a symbol in progress](http://cljsinfo.github.io/api-docs/#progress) that you wish to modify/create.
 
-[![progress](http://i.imgur.com/rhhPfkA.png)](http://cljsinfo.github.io/api-docs/#progress)
+    [![progress](http://i.imgur.com/rhhPfkA.png)](http://cljsinfo.github.io/api-docs/#progress)
 
-1. Click "add new" to create a new doc, or click "manual docs" to see an existing doc.
+1. Click "create new" to create a new doc, or click "manual docs" to see an existing doc.
 
-![create-or-edit](http://i.imgur.com/WRp8UCO.png)
+    ![create-or-edit](http://i.imgur.com/WRp8UCO.png)
 
 1. You can __edit existing__ docs by clicking the edit button in github.
 
-![edit](http://i.imgur.com/KbVEpiu.png)
+    ![edit](http://i.imgur.com/KbVEpiu.png)
 
 1. Once you save your new file or edits, a Pull Request will be created.
-
 1. If the PR requires edits, you can edit through the "Files changed" tab.
 
 ### License
