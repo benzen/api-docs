@@ -1,6 +1,4 @@
-## ClojureScript API Documentation Project
-
-[![Build Status](https://travis-ci.org/cljsinfo/api-docs.svg)](https://travis-ci.org/cljsinfo/api-docs)
+## ClojureScript API Documentation Project [<img align="right" src="https://travis-ci.org/cljsinfo/api-docs.svg">](https://travis-ci.org/cljsinfo/api-docs)
 
 Creating ClojureScript API [`docs/`](docs) in a simple plaintext format (examples, descriptions, see-also),
 then compiling them with [`tools/`](tools) where they are validated and merged with automatically parsed API data, broadcasted to a progress report, and released as an edn file ready to use.
