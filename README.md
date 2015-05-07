@@ -5,19 +5,11 @@
 Creating ClojureScript API [`docs/`](docs) in a simple plaintext format,  
 then compiling them with [`tools/`](tools) so we can use them.
 
-The following are continuously updated on every commit:
+__[Project Website](http://cljsinfo.github.io/api-docs/)__ for more details and a progress chart continuously updated on every commit:
 
----
+[![progress](http://i.imgur.com/zmqbolY.png)](http://cljsinfo.github.io/api-docs/)
 
-__[Project Website](http://cljsinfo.github.io/api-docs/)__ for more details and progress.
-
-![progress](http://i.imgur.com/lyuqRCH.png)
-
----
-
-__[Download Latest Docs](https://github.com/cljsinfo/api-docs/releases/download/docs-release/cljsdocs-full.edn)__
-
-The format of the download is an EDN list of structures of the following format:
+__[Download Latest Docs](https://github.com/cljsinfo/api-docs/releases/download/docs-release/cljsdocs-full.edn)__ in an EDN format, a list of structures of the following form:
 
 ```clj
 {;; from auto docs
