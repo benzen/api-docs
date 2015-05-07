@@ -1,9 +1,9 @@
 ## ClojureScript API Documentation Project
-<img align="right" width="132" src="https://raw.githubusercontent.com/cljsinfo/cljs.info/master/00-scrap/cljs_logo_v10-01.png">
+
 [![Build Status](https://travis-ci.org/cljsinfo/api-docs.svg)](https://travis-ci.org/cljsinfo/api-docs)
 
-Creating ClojureScript API [`docs/`](docs) in a simple plaintext format,  
-then compiling them with [`tools/`](tools) so we can use them.
+Creating ClojureScript API [`docs/`](docs) in a simple plaintext format (examples, descriptions, see-also),
+then compiling them with [`tools/`](tools) where they are validated and merged with automatically parsed API data, broadcasted to a progress report, and released as an edn file ready to use.
 
 __[Project Website](http://cljsinfo.github.io/api-docs/)__ for more details and a progress chart continuously updated on every commit:
 
