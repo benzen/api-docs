@@ -1,12 +1,10 @@
 # CLJS API Docs Report
 
-our progress in documenting the CLJS API
-
-Hosted at <http://cljsinfo.github.io/api-docs>
+Creates the report at <http://cljsinfo.github.io/api-docs>
 
 ## Setup
 
-1. Use this generate the data required by the report:
+1. Use this generate the data required by the report (run docs-compiler first):
 
     ```
     lein run
@@ -25,6 +23,6 @@ Hosted at <http://cljsinfo.github.io/api-docs>
 This will generate and push the report to this repo's `gh-pages` to publish it.
 
 ```
-$ lein run
-$ ./push-report.sh
+./push-report.sh
 ```
+
