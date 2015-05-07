@@ -1,15 +1,12 @@
-# CLJS API Docs [![Build Status](https://travis-ci.org/cljsinfo/api-docs.svg)](https://travis-ci.org/cljsinfo/api-docs)
+### ClojureScript API Docs
 
-Creating ClojureScript API [`docs/`](docs) in a simple plaintext format, then
-compiling them with [`tools/`](tools) so we can use them.
+[![Build Status](https://travis-ci.org/cljsinfo/api-docs.svg)](https://travis-ci.org/cljsinfo/api-docs)
 
-__[>> Progress Website (continuously updated)](http://cljsinfo.github.io/api-docs/)__
+Creating ClojureScript API [`docs/`](docs) in a simple plaintext format  
+then compiling them with [`tools/`](tools) so we can use them.
 
-## Release
-
-The docs release is uploaded after every commit that passes our tests:
-
-__[>> Download Latest Docs](https://github.com/cljsinfo/api-docs/releases/download/docs-release/cljsdocs-full.edn)__
+- __[Project Website](http://cljsinfo.github.io/api-docs/)__ for more details and progress.
+- __[Download Latest Docs](https://github.com/cljsinfo/api-docs/releases/download/docs-release/cljsdocs-full.edn)__
 
 The format of the download is an EDN list of structures of the following format:
 
