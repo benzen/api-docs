@@ -143,9 +143,3 @@ A ton of work has been done, and we have a little bit left:
 1. Add ClojureScript-specific usage examples to the manual docfiles (by copying over those scraped from clojuredocs, and then editing them)
 1. Create docfiles for missing symbols.
 
-__How can I help?__
-
-The table below will help us track what is done and what is left to do.
-If you want to help out, sift through the table to find a symbol to update,
-then submit a PR for that docfile.  Thanks!
-
