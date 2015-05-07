@@ -12,6 +12,20 @@ keys.
 
 Returns nil if the key is not found, or `not-found` if supplied.
 
+
+===== Example
+
+```
+(get-in {:k1 "v1" :k2 "v2" :k3 "v3"} #{:k1})
+;; => "v1"
+
+(get-in {:k1 {:k2 "v2" :k3 "v3"}} #{:k1 :k2})
+;; => "v2"
+
+(get-in {:k1 {:k2 "v2" :k3 "v3"}} #{:k1 :k42} "answer to life")
+;; => "answer to life"
+```
+
 ===== Related
 cljs.core/assoc-in
 cljs.core/update-in
