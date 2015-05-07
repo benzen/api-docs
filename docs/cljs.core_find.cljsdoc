@@ -8,6 +8,18 @@ cljs.core/find
 
 Returns the map entry for key `k`, or nil if `k` is not found.
 
+===== Example
+
+```
+(find {:key "value" :k "v"} :k)
+;; => [:k "v"]
+```
+
+===== TODO
+The description says a map entry.
+But running the example give a vector.
+Is this the expected behavior ?
+
 ===== Related
 cljs.core/get
 cljs.core/get-in
