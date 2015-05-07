@@ -60,15 +60,15 @@
         "yellow")
       "red")))
 
-(defn add-color
+(defn add-custom-data-to-symbol
   [data]
-  (let [color (get-color data)]
-    (assoc data :color color)))
-
-(defn add-anchor-link
-  [data]
-  (let [link (replace (:full-name-encode data) #"\.cljsdoc$" "")]
-    (assoc data :anchor-link link)))
+  (let [color (get-color data)
+        encoded-name (:full-name-encode data)
+        link encoded-name
+        filename (str encoded-name ".cljsdoc")]
+    (assoc data :color color
+                :filename filename
+                :anchor-link link)))
 
 (def ns-description
   {"syntax" "syntax forms (not in a namespace)"
@@ -96,8 +96,7 @@
   (let [new-data (group-by :ns (vals data))
         values (->> (vals new-data)
                     (map #(sort-by :name %))
-                    (map #(map add-color %))
-                    (map #(map add-anchor-link %)))
+                    (map #(map add-custom-data-to-symbol %)))
         result (->> (map vector (keys new-data) values)
                     (sort-by first sort-namespaces)
                     (filter first) ;; <--- TODO: remove symbols that failed to parse (indicated by nil namespace)
@@ -139,6 +138,7 @@
      [:td {:colspan 2}
       "external references"]]
     (for [{:keys [auto-link
+                  filename
                   manual-link
                   manual-examples-count
                   examples-count
@@ -165,7 +165,13 @@
         {:class (str "manualdoc-column " color "-bg")}
         (case color
           "gray" "won't document"
-          "red" "missing manual docs"
+          "red"
+          [:div.missing-docs
+           [:a {:href (str "https://github.com/cljsinfo/api-docs/new/master/docs?filename=" filename)}
+            "create new"]
+           [:div.no-manual-docs
+            [:i.fa.fa-times]
+            " no manual docs"]]
           nil)
         (when manual-link
           (list

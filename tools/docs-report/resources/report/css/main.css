@@ -143,6 +143,20 @@ div#symbol-table .manualdoc-column {
   min-width: 120px;
 }
 
+div#symbol-table .missing-docs {
+  text-align: center;
+  min-width: 120px;
+  opacity: 0.7;
+}
+
+div#symbol-table .missing-docs a {
+  color: #EEE;
+}
+
+div#symbol-table .missing-docs .no-manual-docs {
+  font-size: 0.8em;
+}
+
 /* colors from: https://github.com/mrmrs/colors */
 div#symbol-table .red-bg {
   background: #FF4136;
