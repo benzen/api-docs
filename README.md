@@ -1,4 +1,4 @@
-### ClojureScript API Docs
+# ClojureScript API Docs
 
 [![Build Status](https://travis-ci.org/cljsinfo/api-docs.svg)](https://travis-ci.org/cljsinfo/api-docs)
 
