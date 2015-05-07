@@ -8,9 +8,10 @@ syntax
 
 ===== Description
 
-Signifies a keyword, a special datatype often used as keys for maps.
+Signifies a keyword, a string-like datatype often used as keys for maps.
+Keywords should not start with a number.
 
-Symbols can have an optional namespace. For example, `:foo/bar`. This is useful
+Keywords can have an optional namespace. For example, `:foo/bar`. This is useful
 for functions in a namespace to prevent key collisions on a globally accessible
 map.
 
