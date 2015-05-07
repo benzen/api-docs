@@ -17,14 +17,11 @@ Useful for making forward declarations.
 
 ```
 a
-;; => WARNING: Use of undeclared Var
+;; WARNING: Use of undeclared Var
 
 (declare a)
-;;=> nil
-
 a
 ;;=> nil
-
 ```
 
 ===== Related
