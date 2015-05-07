@@ -8,5 +8,16 @@ cljs.core/fn?
 
 Returns true if `f` is a function, false otherwise.
 
+
+===== Example
+
+```
+(fn? even?)
+;; => true
+
+(fn? true)
+;; => false
+```
+
 ===== Related
 cljs.core/ifn?
