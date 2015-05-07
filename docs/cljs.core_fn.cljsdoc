@@ -34,7 +34,33 @@ calling the function.
 cljs.core/defn
 cljs.core/defn-
 
+===== Example
+
+```
+((fn [a b c]
+  (println (str a b c))) "A" "B" "C")
+;; => "ABC"
+
+((fn [] (println "Same old, same old")))
+;; "Same old, same old"
+;; => nil
+
+((fn count-down [acc] 
+  (if (< 0 acc)
+  (do
+   (println acc) 
+   (count-down (- acc 1))))) 5)
+
+;; => 5
+;; => 4
+;; => 3
+;; => 2
+;; => 1
+
+```
+
 ===== TODO
 
 need to provide a link to some function definition examples; we probably need
 a whole page dedicated to fn expressions
+Need an example for preprost usage, and for multi arrity
