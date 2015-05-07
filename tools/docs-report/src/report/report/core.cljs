@@ -201,6 +201,7 @@
 
 (defn symbol-table []
   [:div#symbol-table
+   [:a {:name "progress"}]
    (md->html progress-md)
    (for [[ns- symbols] symbol-data]
      (ns-overview-table ns- symbols))
