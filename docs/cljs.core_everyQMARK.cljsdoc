@@ -8,6 +8,16 @@ cljs.core/every?
 
 Returns true if `(pred x)` is logical true for every `x` in `coll`, else false.
 
+===== Example
+
+```
+(every? even? [1 2 3 4 5 6])
+;;=> false
+
+(every? even? [2 4 6 8])
+;; => true
+```
+
 ===== Related
 cljs.core/some
 cljs.core/not-any?
