@@ -2,6 +2,9 @@
 <img align="right" width="140" src="https://raw.githubusercontent.com/cljsinfo/cljs.info/master/00-scrap/cljs_logo_v10-01.png">
 [![Build Status](https://travis-ci.org/cljsinfo/api-docs.svg)](https://travis-ci.org/cljsinfo/api-docs) | __[Project Website](http://cljsinfo.github.io/api-docs/)__
 
+Hello! We are building a ClojureScript website. A section of this website will be devoted to providing beautiful and informative documentation for the core library and syntax.
+This repo is dedicated to creating this documentation data.
+
 Some details:
 
 - [`docs/`](docs) has a simple plaintext file for every symbol
@@ -34,7 +37,7 @@ __[Download Latest Docs](https://github.com/cljsinfo/api-docs/releases/download/
  :related           ("cljs.core/assoc" "cljs.core/update-in" "cljs.core/get-in")}
 ```
 
-### Contributors
+### Contributor Guide
 
 If you want to help by modifying/adding doc files to `docs/`, peruse the
 [project page](http://cljsinfo.github.io/api-docs) to learn about the format
@@ -59,6 +62,10 @@ You don't have to leave your browser to contribute new/edited docs:
 
 1. Once you save your new file or edits, a Pull Request will be created.
 1. If the PR requires edits, you can edit through the "Files changed" tab.
+
+### Developer Guide
+
+Please see the [`tools/`](tools) directory and their respective READMEs for details.
 
 ### License
 
