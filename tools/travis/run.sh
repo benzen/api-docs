@@ -2,24 +2,23 @@
 
 set -e
 
-echo
-echo "COMPILING DOCS..."
-cd docs-compiler
-lein test
-lein run
-cd ..
+pushd ../docs-compiler
+  echo
+  echo "COMPILING DOCS..."
+  lein test
+  lein run
+popd
 
 if [ "${TRAVIS_PULL_REQUEST}" = "false" ]; then
 
-  pushd docs-report
-  echo
-  echo "BUILDING REPORT..."
-  ./push-report.sh
-  popd # docs-report
+  pushd ../docs-report
+    echo
+    echo "BUILDING REPORT..."
+    ./push-report.sh
+  popd
 
-  pushd travis
   echo
   echo "PUBLISHING DOCS..."
   lein exec publish.clj
-  popd # travis
+
 fi
