@@ -8,6 +8,21 @@ cljs.core/false?
 
 Returns true if `x` is the value false, false otherwise.
 
+
+===== Example 
+
+```
+(false? "")
+;; => false
+
+(false? nil)
+;; => false
+
+(false? false)
+;; => true
+
+```
+
 ===== Related
 cljs.core/true?
 cljs.core/not
