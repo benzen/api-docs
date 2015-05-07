@@ -10,5 +10,18 @@ Returns true if `n` is an even number.
 
 Throws an exception if `n` is not an integer.
 
+===== Example
+
+```
+(even? 1)
+;; => false
+
+(even? 2)
+;; => true
+
+(even? 1.2)
+;; => Error: Argument must be an integer: 1.2
+```
+
 ===== Related
 cljs.core/odd?
