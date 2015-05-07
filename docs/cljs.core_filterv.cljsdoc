@@ -9,3 +9,14 @@ cljs.core/filterv
 Returns a vector of the items in `coll` for which `(pred item)` returns true.
 
 `pred` must be free of side-effects.
+
+===== Example
+
+```
+(filterv even? [1 2 3 4])
+;; => [2 4]
+```
+
+===== Related
+
+cljs.core/filter
