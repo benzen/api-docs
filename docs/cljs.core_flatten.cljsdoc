@@ -11,4 +11,18 @@ returns their contents as a single, flat sequence.
 
 `(flatten nil)` returns nil.
 
-===== Related
+===== Example
+ 
+ ```
+ (flatten (list 1 2 (list 3 4 (list 5 6 7))))
+ ;; => (1 2 3 4 5 6 7)
+
+(flatten nil)
+;; => ()
+ ```
+
+ ===== TODO
+ The description says it returns nil if 'x' is nil.
+ But running the second example, we got () for nil.
+ Is this normal?
+
