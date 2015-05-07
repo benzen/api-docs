@@ -16,6 +16,17 @@ its arguments, else it returns false.
 Note that `f` is short-circuiting in that it will stop execution on the first
 argument that triggers a logical false result against the original predicates.
 
+===== Example
+
+```
+(defn mult-of-4? [n] 
+  (integer? (/ n 4)))
+
+(map (every-pred even? mult-of-4?) [1 2 3 4 5 6 7 8 9 10])
+;;=> (false false false true false false false true false false)
+```
+
+
 ===== Related
 cljs.core/some-fn
 cljs.core/and
