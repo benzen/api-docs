@@ -19,7 +19,7 @@ Has no effect on the map type (hashed/sorted).
 
 ```
 (dissoc {:key "value" :key2 "value2"} :key)
-;; => {:key2 "value2"}
+;;=> {:key2 "value2"}
 ```
 
 ===== Related
