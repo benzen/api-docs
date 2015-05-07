@@ -11,5 +11,15 @@ Returns the value mapped to key `k`.
 
 Returns `not-found` or nil if `k` is not present in `o`.
 
+===== Example 
+
+```
+(get {:k "v" :k2 "v2"} :k)
+;; => "v"
+
+(get {:k "v"} :what-ever "be clearer please!")
+;; => "be clearer please!"
+```
+
 ===== Related
 cljs.core/get-in
