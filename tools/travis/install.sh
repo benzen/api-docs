@@ -5,6 +5,8 @@
 
 set -e
 
+cd `dirname $0`
+
 pushd ../docs-compiler
   lein deps
 popd
