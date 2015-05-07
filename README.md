@@ -7,8 +7,6 @@ then compiling them with [`tools/`](tools) where they are validated and merged w
 
 __[Project Website](http://cljsinfo.github.io/api-docs/)__ for more details and a progress chart continuously updated on every commit:
 
-[![progress](http://i.imgur.com/rhhPfkA.png)](http://cljsinfo.github.io/api-docs/)
-
 __[Download Latest Docs](https://github.com/cljsinfo/api-docs/releases/download/docs-release/cljsdocs-full.edn)__ in an EDN format, a list of structures of the following form:
 
 ```clj
@@ -32,3 +30,38 @@ __[Download Latest Docs](https://github.com/cljsinfo/api-docs/releases/download/
  :related           ("cljs.core/assoc" "cljs.core/update-in" "cljs.core/get-in")}
 ```
 
+### Contributors
+
+If you want to help by modifying/adding doc files to `docs/`, peruse the
+[project page](http://cljsinfo.github.io/api-docs) to learn about the format
+and then [read the examples guide](https://github.com/cljsinfo/api-docs/wiki/Examples-Guide)
+to help write proper examples.  Pull Requests welcome!
+
+#### Create/Edit docs from the browser
+
+You don't have to leave your browser to contribute new/edited docs:
+
+1. [Click a symbol in progress](http://cljsinfo.github.io/api-docs/#progress) that you wish to modify/create.
+
+[![progress](http://i.imgur.com/rhhPfkA.png)](http://cljsinfo.github.io/api-docs/#progress)
+
+1. Click "add new" to create a new doc, or click "manual docs" to see an existing doc.
+
+![create-or-edit](http://i.imgur.com/WRp8UCO.png)
+
+1. You can __edit existing__ docs by clicking the edit button in github.
+
+![edit](http://i.imgur.com/KbVEpiu.png)
+
+1. Once you save your new file or edits, a Pull Request will be created.
+
+1. If the PR requires edits, you can edit through the "Files changed" tab.
+
+### License
+
+The `docs/` files are released under the CC0.
+
+The `tools/` code is released under the MIT license.
+
+The docstrings and source code included in the generated docs release are
+Copyright © Rich Hickey. All rights reserved. Eclipse Public License 1.0
