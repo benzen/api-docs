@@ -1,12 +1,21 @@
-# ClojureScript API Docs
-
+## ClojureScript API Documentation Project
+<img align="right" width="132" src="https://raw.githubusercontent.com/cljsinfo/cljs.info/master/00-scrap/cljs_logo_v10-01.png">
 [![Build Status](https://travis-ci.org/cljsinfo/api-docs.svg)](https://travis-ci.org/cljsinfo/api-docs)
 
-Creating ClojureScript API [`docs/`](docs) in a simple plaintext format  
+Creating ClojureScript API [`docs/`](docs) in a simple plaintext format,  
 then compiling them with [`tools/`](tools) so we can use them.
 
-- __[Project Website](http://cljsinfo.github.io/api-docs/)__ for more details and progress.
-- __[Download Latest Docs](https://github.com/cljsinfo/api-docs/releases/download/docs-release/cljsdocs-full.edn)__
+The following are continuously updated on every commit:
+
+---
+
+__[Project Website](http://cljsinfo.github.io/api-docs/)__ for more details and progress.
+
+![progress](http://i.imgur.com/lyuqRCH.png)
+
+---
+
+__[Download Latest Docs](https://github.com/cljsinfo/api-docs/releases/download/docs-release/cljsdocs-full.edn)__
 
 The format of the download is an EDN list of structures of the following format:
 
