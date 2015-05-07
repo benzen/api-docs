@@ -1,14 +1,15 @@
 ## ClojureScript API Documentation Project
 <img align="right" width="140" src="https://raw.githubusercontent.com/cljsinfo/cljs.info/master/00-scrap/cljs_logo_v10-01.png">
-[![Build Status](https://travis-ci.org/cljsinfo/api-docs.svg)](https://travis-ci.org/cljsinfo/api-docs)
-
-__[Project Website](http://cljsinfo.github.io/api-docs/)__
+[![Build Status](https://travis-ci.org/cljsinfo/api-docs.svg)](https://travis-ci.org/cljsinfo/api-docs) | __[Project Website](http://cljsinfo.github.io/api-docs/)__
 
 Some details:
 
-- [`docs/`](docs) has a simple plaintext file for every symbol (w/ examples, descriptions, see-also)
-- [`tools/`](tools) validates the doc files and merges with automatically [parsed API data](https://github.com/cljsinfo/api-docs-generator) on every commit.
-- The tools also update progress report and creates a release build:
+- [`docs/`](docs) has a simple plaintext file for every symbol
+  - contains examples, descriptions, "see-also" references
+- [`tools/`](tools) validates the doc files and creates a release build, also:
+  - merges with automatically [parsed API data](https://github.com/cljsinfo/api-docs-generator)
+  - updates progress report
+  - continuously tests/builds on every commit
 
 __[Download Latest Docs](https://github.com/cljsinfo/api-docs/releases/download/docs-release/cljsdocs-full.edn)__ in an EDN format, a list of structures of the following form:
 
