@@ -21,6 +21,9 @@ namespace.  For example, in the user namespace, `::foo` is read as `:user/foo`.
 Note: preceding a namespace-qualified keyword with `::` will throw a reader
 exception if the specified namespace does not exist.
 
+===== TODO
+when keywords allow number prefixes, make note of the first version when it is allowed
+
 ===== Related
 cljs.core/keyword
 cljs.core/keyword?
