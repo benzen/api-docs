@@ -7,7 +7,7 @@ then compiling them with [`tools/`](tools) where they are validated and merged w
 
 __[Project Website](http://cljsinfo.github.io/api-docs/)__ for more details and a progress chart continuously updated on every commit:
 
-[![progress](http://i.imgur.com/zmqbolY.png)](http://cljsinfo.github.io/api-docs/)
+[![progress](http://i.imgur.com/rhhPfkA.png)](http://cljsinfo.github.io/api-docs/)
 
 __[Download Latest Docs](https://github.com/cljsinfo/api-docs/releases/download/docs-release/cljsdocs-full.edn)__ in an EDN format, a list of structures of the following form:
 
