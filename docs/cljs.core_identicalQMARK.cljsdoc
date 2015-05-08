@@ -11,6 +11,26 @@ boolean
 
 Returns true if `x` and `y` are the same object, false otherwise.
 
+===== Example
+
+```
+(identical? 1 2)
+;; => false
+
+(identical? 1 1)
+;; => true
+
+(def m1 {:key "value"})
+(def m2 {:key "value"})
+
+(identical? m1 m2)
+;; => false
+
+(identical? m1 m1)
+;; => true
+
+```
+
 ===== Related
 cljs.core/=
 cljs.core/==
