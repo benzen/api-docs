@@ -1,12 +1,20 @@
 ## ClojureScript API Documentation Project
+<img align="right" width="140" src="https://raw.githubusercontent.com/cljsinfo/cljs.info/master/00-scrap/cljs_logo_v10-01.png">
+[![Build Status](https://travis-ci.org/cljsinfo/api-docs.svg)](https://travis-ci.org/cljsinfo/api-docs) | __[Project Website](http://cljsinfo.github.io/api-docs/)__
 
-[![Build Status](https://travis-ci.org/cljsinfo/api-docs.svg)](https://travis-ci.org/cljsinfo/api-docs)
+Hello! We are building a ClojureScript website. A section of this website will be devoted to providing beautiful and informative documentation for the core library and syntax.
+This repo is dedicated to creating this documentation data.
 
-Creating ClojureScript API [`docs/`](docs) in a simple plaintext format (examples, descriptions, see-also),
-then compiling them with [`tools/`](tools) where they are validated and merged with automatically parsed API data, broadcasted to a progress report, and released as an edn file ready to use.
+Some details:
 
-- __[Project Website](http://cljsinfo.github.io/api-docs/)__ for more details and a progress chart continuously updated on every commit:
-- __[Download Latest Docs](https://github.com/cljsinfo/api-docs/releases/download/docs-release/cljsdocs-full.edn)__ in an EDN format, a list of structures of the following form:
+- [`docs/`](docs) has a simple plaintext file for every symbol
+  - contains examples, descriptions, "see-also" references
+- [`tools/`](tools) validates the doc files and creates a release build, also:
+  - merges with automatically [parsed API data](https://github.com/cljsinfo/api-docs-generator)
+  - updates progress report
+  - continuously tests/builds on every commit
+
+__[Download Latest Docs](https://github.com/cljsinfo/api-docs/releases/download/docs-release/cljsdocs-full.edn)__ in an EDN format, a list of structures of the following form:
 
 ```clj
 {;; from auto docs
@@ -29,7 +37,7 @@ then compiling them with [`tools/`](tools) where they are validated and merged w
  :related           ["cljs.core/assoc" "cljs.core/update-in" "cljs.core/get-in"]}
 ```
 
-### Contributors
+### Contributor Guide
 
 If you want to help by modifying/adding doc files to `docs/`, peruse the
 [project page](http://cljsinfo.github.io/api-docs) to learn about the format
@@ -54,6 +62,10 @@ You don't have to leave your browser to contribute new/edited docs:
 
 1. Once you save your new file or edits, a Pull Request will be created.
 1. If the PR requires edits, you can edit through the "Files changed" tab.
+
+### Developer Guide
+
+Please see the [`tools/`](tools) directory and their respective READMEs for details.
 
 ### License
 

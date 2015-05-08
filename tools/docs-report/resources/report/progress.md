@@ -11,4 +11,4 @@ Our goal is to __create the manual docsfile__ for each symbol.  They are highlig
 
 ## Want to Contribute?
 
-Read the __[Contribution Guide](https://github.com/cljsinfo/api-docs#contributors)__ for more details.
+Read the __[Contribution Guide](https://github.com/cljsinfo/api-docs#contributor-guide)__ for more details.
