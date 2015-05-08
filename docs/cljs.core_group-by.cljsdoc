@@ -12,6 +12,23 @@ each element.
 The value at each key will be a vector of the corresponding elements in the
 order they appeared in `coll`.
 
+
+===== Example
+
+```
+(def users 
+  (list {:name "paul" :role "admin"} 
+        {:name "simon" :role "manager"}
+        {:name "hercules" :role "admin"}
+        {:name "alain" :role "manager"}))
+
+(group-by (fn [user] (:role user)) users )
+;; => {"admin" [
+          {:name "paul", :role "admin"} {:name "hercules", :role "admin"}], 
+       "manager" [
+          {:name "simon", :role "manager"} {:name "alain", :role "manager"}]}
+```
+
 ===== Related
 cljs.core/partition-by
 cljs.core/frequencies
