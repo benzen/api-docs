@@ -8,6 +8,16 @@ cljs.core/identity
 
 Returns its argument.
 
+===== Example
+
+```
+(identity 42)
+;; => 42
+
+(identity {:key "value"})
+;; => {:key "value"}
+```
+
 ===== Related
 cljs.core/nil?
 
