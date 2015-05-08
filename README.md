@@ -23,10 +23,10 @@ then compiling them with [`tools/`](tools) where they are validated and merged w
  :source            "...full source code..."
 
  ;; from manual docs
- :queries           () ;; mainly for syntax forms, (e.g. syntax/vector has "[]" as a query)
+ :search-terms      []
  :description       "... markdown description ..."
- :examples          ({:id "e76f20" :content "... markdown example ..."} *)
- :related           ("cljs.core/assoc" "cljs.core/update-in" "cljs.core/get-in")}
+ :examples          [{:id "e76f20" :content "... markdown example ..."} *]
+ :related           ["cljs.core/assoc" "cljs.core/update-in" "cljs.core/get-in"]}
 ```
 
 ### Contributors

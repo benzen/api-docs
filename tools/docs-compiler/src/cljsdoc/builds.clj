@@ -29,7 +29,10 @@
   [mandoc-map]
   (let [filename "cljsdocs-full.edn"
         mandocs (mapmap #(dissoc % :sections) mandoc-map)
-        output (merge-with merge @autodoc-map mandocs)]
+        stringify #(if % (str %) %)
+        process-val #(update-in % [:return-type] stringify)
+        output (->> (merge-with merge @autodoc-map mandocs)
+                    (mapmap process-val))]
     (spit-docs! filename output)))
 
 (defn report!

@@ -9,17 +9,18 @@
   [body-text]
   (->> (split-lines body-text)
        (map trim)
-       (remove #{""})))
+       (remove #{""})
+       vec))
 
 (defn transform-name [doc]
   (if-let [body (get doc "name")]
-    (let [[full-name & queries] (section-as-list body)
+    (let [[full-name & search-terms] (section-as-list body)
           [ns- name-] ((juxt namespace name) (symbol full-name))]
       (-> doc
           (assoc :ns ns-
                  :name name-
                  :full-name full-name
-                 :queries queries)
+                 :search-terms (vec search-terms))
           (dissoc "name")))
     doc))
 
@@ -54,7 +55,7 @@
 (defn transform-examples [doc]
   (let [example? #(re-find #"^example(#[a-z0-9]+)?$" %)
         example-names (filter example? (:sections doc))
-        examples (map #(make-example % doc) example-names)]
+        examples (mapv #(make-example % doc) example-names)]
     (if (seq examples)
       (as-> doc d
         (assoc d :examples examples)
