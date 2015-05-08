@@ -10,6 +10,19 @@ Returns a new hash map with supplied mappings.
 
 `keyvals` must be an even number of forms.
 
+===== Example
+
+```
+(hash-map :key "value")
+;;=> {:key "value"}
+
+(hash-map nil)
+;; => {}
+
+(hash-map :key)
+;; => {}
+```
+
 ===== Related
 cljs.core/array-map
 cljs.core/sorted-map
