@@ -15,6 +15,16 @@ When `test` is logical true, evaluates `then` with the value of `test` bound to
 
 `else` defaults to nil.
 
+===== Example
+
+```
+(def a 42)
+(if-let [is-superior-to-fifty (> 50 a)]
+    (println (str "a is superior to 50 " is-superior-to-fifty))
+    (println "A isnt superior to 50"))
+;; => "a is superior to 50 true"
+```
+
 ===== Related
 cljs.core/when-let
 special/if
