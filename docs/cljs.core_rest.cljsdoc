@@ -16,7 +16,7 @@ cljs.core/first
 cljs.core/drop
 cljs.core/pop
 
-===== Example#eb0836
+===== Example#0869af
 
 ```
 (rest [1 2 3])

@@ -12,7 +12,7 @@ code.  The first argument is called with the subsequent arguments.
 
 ===== Related
 syntax/vector
-cljs.core/quote
+syntax/quote
 
 ===== Example#cd26b0
 

@@ -14,8 +14,15 @@ Returns a new map that does not contain a mapping for key(s).
 
 Has no effect on the map type (hashed/sorted).
 
+
+===== Example#fd6ae9
+
+```
+(dissoc {:key "value" :key2 "value2"} :key)
+;;=> {:key2 "value2"}
+```
+
 ===== Related
 cljs.core/assoc
-cljs.core/dissoc-in
 cljs.core/disj
 cljs.core/select-keys

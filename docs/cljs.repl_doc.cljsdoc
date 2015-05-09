@@ -11,7 +11,7 @@ Prints documentation for the var or special form with the name `name`.
 ===== Related
 cljs.repl/find-doc
 cljs.core/meta
-cljs.core/var
+special/var
 
 ===== Example#4d2768
 

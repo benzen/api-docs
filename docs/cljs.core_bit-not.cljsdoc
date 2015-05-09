@@ -24,7 +24,7 @@ Same numbers in decimal:
 ;;=> -13
 ```
 
-====== TODO
+===== TODO
 
 look into how negative numbers are represented in binary (two's complement, but how does this work in JavaScript with floats)
 - http://stackoverflow.com/questions/9939760/how-do-i-convert-an-integer-to-binary-in-javascript

@@ -17,6 +17,19 @@ and is a fundamental building block of the language. All other conditionals in
 ClojureScript are based on `if`s notion of truthiness (ie: anything other than
 false or nil).
 
+===== Example#e591ff
+
+```
+(def v [1 2])
+
+(if (empty? v) "empty!" "filled!")
+;;=> "filled!"
+
+(str "This vector is "
+  (if (empty? v) "empty!" "filled!"))
+;;=> "This vector is filled!"
+```
+
 ===== Related
 cljs.core/cond
 cljs.core/when

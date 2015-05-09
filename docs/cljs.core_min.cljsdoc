@@ -10,6 +10,20 @@ cljs.core/min
 
 Returns the least number argument.
 
+===== Example#ab2de5
+
+```
+(min 1 2 3 4)
+;; => 1
+```
+
+Apply it to a collection:
+
+```
+(apply min [1 2 3 4])
+;; => 1
+```
+
 ===== Related
 cljs.core/max
 cljs.core/min-key

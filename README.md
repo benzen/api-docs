@@ -1,50 +1,77 @@
-# CLJS API Docs
+## ClojureScript API Documentation Project
+<img align="right" width="140" src="https://raw.githubusercontent.com/cljsinfo/cljs.info/master/00-scrap/cljs_logo_v10-01.png">
+[![Build Status](https://travis-ci.org/cljsinfo/api-docs.svg)](https://travis-ci.org/cljsinfo/api-docs) | __[Project Website](http://cljsinfo.github.io/api-docs/)__
 
-These are manually created docs that will be merged over the [generated docs]
-to create all the information for a symbol's doc page.
+Hello! We are building a ClojureScript website. A section of this website will be devoted to providing beautiful and informative documentation for the core library and syntax.
+This repo is dedicated to creating this documentation data.
 
-For example, `assoc-in` has the following format:
+Some details:
 
-    ===== Name
-    cljs.core/assoc-in
+- [`docs/`](docs) has a simple plaintext file for every symbol
+  - contains examples, descriptions, "see-also" references
+- [`tools/`](tools) validates the doc files and creates a release build, also:
+  - merges with automatically [parsed API data](https://github.com/cljsinfo/api-docs-generator)
+  - updates progress report
+  - continuously tests/builds on every commit
 
-    ===== Signature
-    [m [k & ks] v]
+__[Download Latest Docs](https://github.com/cljsinfo/api-docs/releases/download/docs-release/cljsdocs-full.edn)__ in an EDN format, a list of structures of the following form:
 
-    ===== Description
+```clj
+{;; from auto docs
+ :full-name         "cljs.core/assoc-in"
+ :ns                "cljs.core"
+ :name              "assoc-in"
+ :type              "function"
+ :signature         ["[m [k & ks] v]" *]
+ :docstring         "...full docstring..."
+ :history           ["+r927"]
+ :return-type       nil ;; if detected
+ :source-filename   "clojurescript/src/cljs/cljs/core.cljs"
+ :source-link       "https://github.com/clojure/clojurescript/blob/r2505/src/cljs/cljs/core.cljs#L4018-L4025"
+ :source            "...full source code..."
 
-    Associates a value in a nested associative structure, where `ks` is a sequence
-    of keys and `v` is the new value. Returns a new nested structure.
+ ;; from manual docs
+ :search-terms      []
+ :description       "... markdown description ..."
+ :examples          [{:id "e76f20" :content "... markdown example ..."} *]
+ :related           ["cljs.core/assoc" "cljs.core/update-in" "cljs.core/get-in"]}
+```
 
-    If any levels do not exist, hash-maps will be created.
+### Contributor Guide
 
-    ===== Related
-    cljs.core/assoc
-    cljs.core/update-in
-    cljs.core/dissoc-in
-    cljs.core/get-in
+If you want to help by modifying/adding doc files to `docs/`, peruse the
+[project page](http://cljsinfo.github.io/api-docs) to learn about the format
+and then [read the examples guide](https://github.com/cljsinfo/api-docs/wiki/Examples-Guide)
+to help write proper examples.  Pull Requests welcome!
 
-    ===== Example#e76f20
+#### Create/Edit docs from the browser
 
-    ```
-    (def users [{:name "James" :age 26}
-                {:name "John" :age 43}])
-    ```
+You don't have to leave your browser to contribute new/edited docs:
 
-    Update the age of the second (index 1) user:
+1. [Click a symbol in progress](http://cljsinfo.github.io/api-docs/#progress) that you wish to modify/create.
 
-    ```
-    (assoc-in users [1 :age] 44)
-    ;;=> [{:name "James", :age 26}
-    ;;    {:name "John", :age 44}]
-    ```
+    [![progress](http://i.imgur.com/rhhPfkA.png)](http://cljsinfo.github.io/api-docs/#progress)
 
-    Insert the password of the second (index 1) user:
+1. Click "create new" to create a new doc, or click "manual docs" to see an existing doc.
 
-    ```
-    (assoc-in users [1 :password] "nhoJ")
-    ;;=> [{:name "James", :age 26}
-    ;;    {:password "nhoJ", :name "John", :age 43}]
-    ```
+    ![create-or-edit](http://i.imgur.com/WRp8UCO.png)
 
-[generated docs]:http://github.com/cljsinfo/api-docs-generated
+1. You can __edit existing__ docs by clicking the edit button in github.
+
+    ![edit](http://i.imgur.com/KbVEpiu.png)
+
+1. Once you save your new file or edits, a Pull Request will be created.
+1. If the PR requires edits, you can edit through the "Files changed" tab.
+
+### Developer Guide
+
+Please see the [`tools/`](tools) directory and their respective READMEs for details.
+
+### License
+
+The `docs/` files are released under the CC0.
+
+The `tools/` code is released under the MIT license.
+
+The docstrings and source code included in the generated docs release are
+Copyright © Rich Hickey. All rights reserved. Eclipse Public License 1.0

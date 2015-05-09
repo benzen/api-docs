@@ -1,5 +1,5 @@
 ===== Name
-syntax/var
+syntax/var-quote
 #'
 
 ===== Type
@@ -12,7 +12,7 @@ Accesses the var attached to the given symbol.
 `#'x` = `(var x)`
 
 ===== Related
-cljs.core/var
+special/var
 
 ===== Example#673ef6
 
