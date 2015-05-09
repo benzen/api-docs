@@ -8,7 +8,7 @@ cljs.core/dec
 
 Returns a number one less than `x`.
 
-===== Example
+===== Example#d59678
 
 ```
 (dec 10)
