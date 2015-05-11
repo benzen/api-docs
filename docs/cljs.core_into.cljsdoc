@@ -12,5 +12,20 @@ Returns a new collection consisting of `to` with all of the items of `from`
 
 A transducer may be supplied as `xform`.
 
+===== Example
+
+```
+(into [1 2 3 4] `(5 6 7))
+
+;; => [1 2 3 4 5 6 7]
+
+
+(into #{:1 :k2} {:key "value"})
+;; => #{:1 :k2 [:key "value"]}
+
+(into [1 2 3 4] (map (comp inc inc) [5 6 7]))
+;; => [1 2 3 4 7 8 9]
+```
+
 ===== Related
 cljs.core/conj
