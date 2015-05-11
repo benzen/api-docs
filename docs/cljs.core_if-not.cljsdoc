@@ -13,6 +13,20 @@ macro
 If `test` is false or nil, evaluates and returns `then`. Otherwise, evaluates
 and returns `else`. `else` defaults to nil if not provided.
 
+
+===== Example
+
+```
+(if-not (even? 1) "this is odd")
+;; => "this is odd"
+
+(if-not nil 1 -1)
+;; => 1
+
+(if-not (= 1 1) "whoops")
+;; => nil
+```
+
 ===== Related
 special/if
 cljs.core/when-not
