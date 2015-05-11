@@ -13,5 +13,13 @@ macro
 If `test` is not nil, evaluates `then` with `x` bound to the value of `test`. If
 not, yields `else`.
 
+===== Example
+
+```
+(if-some [value (- 44 2)]
+  (str "answer to life and everything elese is " value)
+  (str "Still don't knwo the answer to everything"))
+```
+
 ===== Related
 cljs.core/when-some
