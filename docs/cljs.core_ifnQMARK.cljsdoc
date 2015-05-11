@@ -10,5 +10,33 @@ Returns true if `f` implements the `IFn` protocol, false otherwise.
 
 Functions, keywords, map, sets, and vectors can be called as functions.
 
+===== Example
+
+```
+(ifn? #(print "abc"))
+;; => true
+
+(ifn? (fn [] (print "abc")))
+;; => true
+
+(ifn? :key)
+;; => true
+
+(ifn? {:key "value"})
+;; => true
+
+(ifn? #{:k1 :k2})
+;; => true
+
+(ifn? [])
+;; => true
+
+(ifn? nil)
+;; => false
+
+(ifn? `())
+;; => false
+```
+
 ===== Related
 cljs.core/fn?
