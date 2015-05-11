@@ -8,5 +8,18 @@ cljs.core/integer?
 
 Returns true if `n` is an integer, false otherwise.
 
+===== Example
+
+```
+(integer? 12)
+;; => true
+
+(integer? 12.21)
+;; => false
+
+(integer? "abc")
+;; => false
+```
+
 ===== Related
 cljs.core/int
