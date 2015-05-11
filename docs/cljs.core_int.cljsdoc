@@ -8,6 +8,19 @@ cljs.core/int
 
 Coerces `x` to an integer by stripping decimal places.
 
+===== Example
+
+```
+(int 12.21)
+;; => 12
+
+(int "abc")
+;; => Warning: all arguments must be numbers, got [string number] instead.
+
+(int 12)
+;; => 12
+```
+
 ===== Related
 cljs.core/char
 cljs.core/integer?
