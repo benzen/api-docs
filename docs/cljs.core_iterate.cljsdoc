@@ -10,6 +10,13 @@ Returns a lazy sequence of `x`, `(f x)`, `(f (f x))` etc.
 
 `f` must be free of side-effects.
 
+===== Example 
+
+```
+(take 1 (iterate #(inc %1) 10))
+;; => (10 11 12 13 14 15 16 17 18 19)
+```
+
 ===== Related
 cljs.core/cycle
 cljs.core/repeatedly
