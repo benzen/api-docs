@@ -8,6 +8,22 @@ cljs.core/into-array
 
 Returns a new JavaScript array from the elements of `aseq`.
 
+===== Example
+
+```
+(into-array [1 2 3 4])
+;; => #js [1 2 3 4]
+
+(into-array (list 1 2 3 4))
+;; => #js [1 2 3 4]
+
+(into-array "abc"
+;; => #js ["a" "b" "c"]
+
+(into-array #{:k1 :k2})
+;; => #js [:k1 k2]
+```
+
 ===== Related
 cljs.core/to-array
 cljs.core/make-array
