@@ -8,5 +8,15 @@ cljs.core/inc
 
 Returns a number one greater than `x`.
 
+===== Example
+
+```
+(inc 1)
+;; => 2
+
+(inc "abc")
+;; => Warnning: all arguments must be numbers, got [string number] instead.
+```
+
 ===== Related
 cljs.core/dec
