@@ -8,5 +8,18 @@ cljs.core/instance?
 
 Returns true if `o` is an instance of type `t`, false otherwise.
 
+===== TODO
+
+This one seams odd.
+Here is what I've got in my repl.
+```
+(instance? vector [])
+;; => false
+
+(instance? js/Object `())
+;; => true
+
+```
+
 ===== Related
 cljs.core/type
