@@ -14,6 +14,17 @@ means false return values will be included.
 
 Returns a stateful transducer when no collection is provided.
 
+===== Example
+
+```
+(keep-indexed #(str %1 " " %2) ["a" "b" "c" "d"])
+;; =>( "0 a" "1 b" "2 c" "3 d")
+```
+
+===== TODO
+
+Include a usage of with transducer
+
 ===== Related
 cljs.core/map-indexed
 cljs.core/keep
