@@ -8,5 +8,13 @@ cljs.core/key
 
 Returns the key of the map entry.
 
+===== Example
+
+```
+(key [:key "value"])
+;; => :key
+
+```
+
 ===== Related
 cljs.core/keys
