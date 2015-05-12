@@ -19,6 +19,9 @@ Returns a stateful transducer when no collection is provided.
 ```
 (keep-indexed #(str %1 " " %2) ["a" "b" "c" "d"])
 ;; =>( "0 a" "1 b" "2 c" "3 d")
+
+(keep-indexed (fn [] nil) [1 2 3 4 5])
+;; => ()
 ```
 
 ===== TODO
