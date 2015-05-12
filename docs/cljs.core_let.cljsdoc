@@ -31,6 +31,18 @@ syntax and scope rules.
 [mini-language]:http://blog.jayfields.com/2010/07/clojure-destructuring.html
 [special forms]:http://clojure.org/special_forms
 
+
+===== Example
+
+```
+(defn fun []
+  (let [a "a string"]
+  (println a)))
+(fun)
+;; => "a string"
+;; => nil
+```
+
 ===== Related
 cljs.core/letfn
 cljs.core/if-let
