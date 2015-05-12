@@ -8,6 +8,13 @@ cljs.core/list
 
 Creates a new list containing `items`.
 
+===== Example
+
+```
+(list 1 2 3)
+;; => (1 2 3)
+```
+
 ===== Related
 cljs.core/vector
 cljs.core/list?
