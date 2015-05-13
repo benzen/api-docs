@@ -8,6 +8,26 @@ cljs.core/map?
 
 Returns true if `x` is a map, false otherwise.
 
+
+===== Example
+
+```
+(map? [1 2 3])
+;; => false
+
+(map? `(1 2 3 4))
+;; => false
+
+(map? #{:key :k2 :k3})
+;; => false
+
+(map? {:key "value"})
+;; => true
+
+(map? (js-obj "key" "value"))
+;;=> false
+```
+
 ===== Related
 cljs.core/hash-map
 cljs.core/sorted-map
