@@ -8,6 +8,19 @@ cljs.core/neg?
 
 Returns true if `n` is less than 0, false otherwise.
 
+===== Example
+
+```
+(neg? 10)
+;; => false
+
+(neg? -10)
+;; => true
+
+(neg? 0)
+;; => false
+```
+
 ===== Related
 cljs.core/pos?
 cljs.core/zero?
