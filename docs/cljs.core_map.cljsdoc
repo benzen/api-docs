@@ -20,6 +20,17 @@ accept number-of-`c`s arguments.
 
 Returns a transducer when no collection is provided.
 
+===== Example
+
+```
+(map inc `(1 2 3 4))
+;; => (2 3 4 5)
+
+```
+
+===== TODO 
+add an exemple for the transducer case
+
 ===== Related
 cljs.core/map-indexed
 cljs.core/amap
