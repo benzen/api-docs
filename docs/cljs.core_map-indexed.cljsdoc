@@ -12,6 +12,18 @@ first item of `coll`, followed by applying `f` to 1 and the second item in
 
 Function `f` should accept 2 arguments, index and item.
 
+===== Example
+
+```
+(map-indexed #(print %1 %2) {:key "value"})
+;; => 0 [:key "value"]
+
+(map-indexed #(println %1 %2) ["a" "b"])
+;; =>0 "a" 
+;; =>1 "b"
+
+```
+
 ===== Related
 cljs.core/map
 cljs.core/keep-indexed
