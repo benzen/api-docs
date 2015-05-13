@@ -8,6 +8,14 @@ cljs.core/make-array
 
 Creates an empty JavaScript array of size `size`.
 
+
+===== Example
+
+```
+(make-array 3)
+;; => #js [nil nil nil]
+```
+
 ===== Related
 cljs.core/aclone
 cljs.core/array
