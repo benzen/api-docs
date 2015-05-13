@@ -15,6 +15,13 @@ supplied.
 `nth` works for Strings, Arrays, Regex Matchers, Lists, and Sequences. For
 Sequences, `nth` takes O(n) time.
 
+===== Example
+
+```
+(nth [1 2 3 4] 3)
+;; => 4
+```
+  
 ===== Related
 cljs.core/first
 cljs.core/second
