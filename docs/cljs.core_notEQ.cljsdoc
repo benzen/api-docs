@@ -12,6 +12,13 @@ Returns the opposite of `=`.
 
 Same as `(not (= x y))`
 
+===== Example
+
+```
+(not= 10 12)
+;; => true
+```
+
 ===== Related
 cljs.core/=
 cljs.core/not
