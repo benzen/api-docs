@@ -11,6 +11,22 @@ boolean
 
 Returns true if `x` is logical false, false otherwise.
 
+===== Example
+
+```
+(not true)
+;; => false
+
+(not false)
+;; => true
+
+(not 10)
+;; => false
+
+(not nil)
+;; => true
+```
+
 ===== Related
 cljs.core/complement
 cljs.core/false?
