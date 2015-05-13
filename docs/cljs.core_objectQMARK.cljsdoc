@@ -8,5 +8,15 @@ cljs.core/object?
 
 Returns true if `x` is a JavaScript object, false otherwise.
 
+===== Example
+
+```
+(object? (js/Object))
+;; => true
+
+(object? {:key "value"})
+;; => false
+```
+
 ===== Related
 cljs.core/array?
