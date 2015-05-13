@@ -12,6 +12,17 @@ Returns the `x` for which `(k x)` is greatest.
 
 `(k x)` should return a number.
 
+===== Example
+
+```
+(max-key :key {:key 123} {:key 345})
+;; => {:key 345}
+
+(max-key :key {:key "abc"} {:key "abd"} {:key "a"})
+;; => {:key "abd"}
+
+```
+
 ===== Related
 cljs.core/max
 cljs.core/min-key
