@@ -12,4 +12,28 @@ A memoized version of a function keeps a cache of the mappings from arguments to
 results in memory. When calls with the same arguments are repeated often, a
 memoized function has higher performance at the expense of higher memory usage.
 
+
+===== Example
+
+```
+(defn fibo [n]
+ (if (< n 1) 
+  1
+  (+ n (fibo (- n 1)))))
+
+(def fibo-memo (memoize fibo))
+
+(time (fibo 10000))
+;; => "Elapsed 8 ms"
+
+(time (fibo 10000))
+;; => "Elapsed 8 ms"
+
+(time (fibo-memo 10000))
+;; => "Elasped 13 ms"
+
+(time (fibo-memo 10000))
+;; => "Elasped 0 ms"
+```
+
 ===== Related
