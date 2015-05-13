@@ -16,5 +16,16 @@ colls are ignored.
 
 Function `f` should accept number-of-colls arguments.
 
+===== Example
+
+```
+(mapv inc (list 1 2 3 4))
+;; => [2 3 4 5]
+
+(mapv (fn [e-of-c1 e-of-c2]
+  [e-of-c1 e-of-c2]) [1 2] [6 7])
+;; => [[1 6] [2 7]]
+```
+
 ===== Related
 cljs.core/map
