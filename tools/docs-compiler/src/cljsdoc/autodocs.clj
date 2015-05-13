@@ -9,5 +9,6 @@
 
 (defn get-autodocs! []
   (let [autodocs (read-string (slurp edn-url))
-        doc-map (zipmap (map :full-name autodocs) autodocs)]
+        doc-map (-> autodocs :library-api :symbols)]
     (reset! autodoc-map doc-map)))
+
