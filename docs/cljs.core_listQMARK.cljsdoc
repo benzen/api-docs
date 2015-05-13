@@ -8,6 +8,16 @@ cljs.core/list?
 
 Returns true if `x` is a list, false otherwise.
 
+===== Example
+
+```
+(list? `(1 2 3))
+;; => false
+
+(list? (list 1 2 3))
+;; => true
+```
+
 ===== Related
 cljs.core/seq?
 cljs.core/sequential?
