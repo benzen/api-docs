@@ -10,6 +10,19 @@ cljs.core/max
 
 Returns the greatest number argument.
 
+===== Example
+
+```
+(max 123 456)
+;; => 456
+
+(max "a" "b")
+;; => "b"
+
+(max [1 2 3] [ 4 5 6])
+;; => [4 5 6]
+```
+
 ===== Related
 cljs.core/min
 cljs.core/max-key
