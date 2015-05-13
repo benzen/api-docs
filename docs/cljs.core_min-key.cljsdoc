@@ -12,6 +12,13 @@ Returns the `x` for which `(k x)` is least.
 
 `(k x)` should return a number.
 
+===== Example
+
+```
+(min-key :key {:key 10} {:key 20})
+;; => {:key 10}
+```
+
 ===== Related
 cljs.core/min
 cljs.core/max-key
