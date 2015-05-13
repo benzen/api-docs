@@ -8,6 +8,16 @@ cljs.core/nil?
 
 Returns true if `x` is nil, false otherwise.
 
+===== Example
+
+```
+(nil? nil)
+;; => true
+
+(nil? true)
+;; => false
+```
+
 ===== Related
 cljs.core/true?
 cljs.core/false?
