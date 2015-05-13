@@ -8,5 +8,15 @@ cljs.core/nnext
 
 Same as `(next (next coll))`.
 
+===== Example
+
+```
+(nnext [1 2 3 4 5])
+;; => (3 4 5)
+
+(nnext (list 1 2 3 4 5))
+;; => (3 4 5)
+```
+
 ===== Related
 cljs.core/next
