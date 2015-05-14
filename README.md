@@ -19,6 +19,7 @@ __[Download Latest Docs](https://github.com/cljsinfo/api-docs/releases/download/
 ```clj
 {;; from auto docs
  :full-name         "cljs.core/assoc-in"
+ :clj-symbol        "clojure.core/assoc-in"
  :ns                "cljs.core"
  :name              "assoc-in"
  :type              "function"
