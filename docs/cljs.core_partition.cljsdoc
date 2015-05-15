@@ -18,11 +18,25 @@ complete the last partition up to `n` items.
 Returns a partition with less than `n` items if there are not enough padding
 elements.
 
+===== Example
+
+```
+(partition 4 [1 2 3 4 5 6 7 8 9 0])
+;; => ((1 2 3 4) (5 6 7 8))
+
+(partition 4 2 [1 2 3 4 5 6 7 8 9 0])
+;; => ((1 2 3 4) (3 4 5 6) (5 6 7 8) (7 8 9 0))
+
+(partition 4 5 [1 2 3 4 5 6 7 8 9 0])
+;; => ((1 2 3 4) (6 7 8 9))
+
+(partition 4 9 [0 0 0 0 0] [1 2 3 4 5 6 7 8 9 0])
+;; => ((1 2 3 4) (0 0 0 0))
+
+```
+
 ===== Related
 cljs.core/partition-all
 cljs.core/split-at
 cljs.core/partition-by
 
-===== TODO
-
-This function really needs an example.
