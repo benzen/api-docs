@@ -8,6 +8,20 @@ cljs.core/pos?
 
 Returns true if `n` is greater than 0, false otherwise.
 
+
+===== Example
+
+```
+(pos? 10)
+;; => true
+
+(pos? -20)
+;; => false
+
+(pos? 0)
+;; => false
+```
+
 ===== Related
 cljs.core/neg?
 cljs.core/zero?
