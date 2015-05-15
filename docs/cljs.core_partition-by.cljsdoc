@@ -12,6 +12,13 @@ value. Returns a lazy sequence of partitions.
 
 Returns a stateful transducer when no collection is provided.
 
+===== Example
+
+```
+(partition-by #(< 3 %) [1 2 3 4 5 6])
+;; => ((1 2 3) (4 5 6))
+```
+
 ===== Related
 cljs.core/partition
 cljs.core/partition-all
