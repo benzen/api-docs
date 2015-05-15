@@ -10,5 +10,12 @@ Returns a random element from a sequential collection `coll`.
 
 Has the same performance characteristics as `nth`.
 
+===== Example
+
+```
+(rand-nth [1 2 3 4 5 6 7])
+;; => 2
+```
+
 ===== Related
 cljs.core/rand
