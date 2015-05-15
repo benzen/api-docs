@@ -11,6 +11,16 @@ Returns a random floating point number between 0 inclusive and `n` exclusive.
 
 `n` defaults to 1.
 
+===== Example
+
+```
+(rand)
+;; => 0.7116429625659942
+
+(rand 100)
+;; => 63.49888489612763
+```
+
 ===== Related
 cljs.core/rand-int
 cljs.core/rand-nth
