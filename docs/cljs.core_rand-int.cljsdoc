@@ -8,5 +8,12 @@ cljs.core/rand-int
 
 Returns a random integer between 0 inclusive and `n` exclusive.
 
+===== Example
+
+```
+(rand-int 10)
+;; => 6
+```
+
 ===== Related
 cljs.core/rand
