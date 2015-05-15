@@ -10,6 +10,19 @@ Returns the quotient of dividing numerator `n` by denominator `d`.
 
 Returns `NaN` when `d` is 0 (divide by 0 error).
 
+===== Example
+
+```
+(quot 10 2)
+;; => 5
+
+(quot 2 10)
+;; => 0
+
+(quot 2 0)
+;; => NaN
+```
+
 ===== Related
 cljs.core/rem
 cljs.core/mod
