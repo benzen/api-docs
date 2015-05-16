@@ -19,6 +19,6 @@ Returns the result of `(re-find re s)` if `re` fully matches `s`.
 ```
 
 ===== Related
-re-find
-re-pattern
-re-seq
+cljs.core/re-find
+cljs.core/re-pattern
+cljs.core/re-seq
