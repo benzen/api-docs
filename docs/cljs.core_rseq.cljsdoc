@@ -12,5 +12,15 @@ Returns nil if `coll` is empty.
 
 `coll` must be a vector or a sorted-map.
 
+===== Example
+
+```
+(rseq [1 2 3 4])
+;; => (4 3 2 1)
+
+(rseq [])
+;; => nil
+```
+
 ===== Related
 cljs.core/reverse
