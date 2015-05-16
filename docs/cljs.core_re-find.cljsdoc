@@ -23,6 +23,6 @@ groups if the regular expression contains capturing groups.
 
 ===== Related
 
-re-matches
-re-pattern
-re-seq
+cljs.core/re-matches
+cljs.core/re-pattern
+cljs.core/re-seq
