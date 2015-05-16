@@ -10,6 +10,18 @@ cljs.core/repeatedly
 Takes a function `f` of no args, presumably with side effects, and returns an
 infinite (or length `n` if supplied) lazy sequence of calls to it.
 
+===== Example 
+
+```
+(take 2 (repeatedly #(println "abc")))
+;; => "abc"
+;; => "abc"
+
+(repeatedly 2 #(println "abc"))
+;; => "abc"
+;; => "abc"
+```
+
 ===== Related
 cljs.core/repeat
 cljs.core/iterate
