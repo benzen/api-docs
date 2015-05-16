@@ -8,5 +8,12 @@ cljs.core/reverse
 
 Returns a sequence of the items in `coll` in reverse order. Not lazy.
 
+===== Example
+
+```
+(reverse "abc")
+;; => ("c" "b" "a")
+```
+
 ===== Related
 cljs.core/rseq
