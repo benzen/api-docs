@@ -21,6 +21,19 @@ item in `coll`, then applying `f` to that result and the 2nd item, etc.
 
 If `coll` contains no items, returns `val` and `f` is not called.
 
+===== Example
+
+```
+(reduce inc [1 2 3 4 5])
+;; => 5
+
+(reduce inc 10 [1 2 3 4 5 6])
+;; => 16
+
+(reduce inc 10 [])
+;; => 10
+```
+
 ===== Related
 cljs.core/reductions
 cljs.core/apply
