@@ -10,6 +10,19 @@ Returns true if `x` is a sequence, false otherwise.
 
 All collections can be converted into a sequence using `seq`.
 
+===== Example
+
+```
+(seq? [1 2 3])
+;; => false
+
+(seq? "abc")
+;; => false
+
+(seq? '(1 2 3))
+;; => true
+```
+
 ===== Related
 cljs.core/seq
 cljs.core/sequential?
