@@ -4,6 +4,16 @@ cljs.core/re-find
 ===== Signature
 [re s]
 
+===== Example
+
+```
+(re-find #"123\d" "0123456789")
+;; => "1234"
+
+(re-find #"123\d(\d\d)" "0123456789")
+;; => ["123456" "56"]
+```
+
 ===== Description
 
 Returns the first regex match, if any, of `s` to `re`, using `re.exec(s)`.
