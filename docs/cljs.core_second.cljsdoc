@@ -10,6 +10,13 @@ Returns the second item in `coll`.
 
 Same as `(first (next coll))`
 
+===== Example
+
+```
+(second [1 2 3 4])
+;; => 2
+```
+
 ===== Related
 cljs.core/first
 cljs.core/nth
