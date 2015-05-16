@@ -12,6 +12,16 @@ Returns a sequence on the collection. If the collection is empty, returns nil.
 
 `seq` also works on strings.
 
+===== Example
+
+```
+(seq [1 2 3 4])
+;; => (1 2 3 4)
+
+(seq "abc")
+;; => ("a" "b" "c")
+```
+
 ===== Related
 cljs.core/seq?
 cljs.core/empty?
