@@ -10,6 +10,22 @@ Returns true if `coll` implements the `ISequential` protocol, false otherwise.
 
 Lists and vectors are sequential.
 
+===== Example
+
+```
+(sequential? [1 2 3])
+;; => true
+
+(sequential? (list 1 2 3 4))
+;; => true
+
+(sequential? "abc")
+;; => false
+
+(sequential? #{:key :k2})
+;; => false
+```
+
 ===== Related
 cljs.core/seq?
 cljs.core/coll?
