@@ -8,5 +8,23 @@ cljs.core/set?
 
 Returns true if `x` is a set, false otherwise.
 
+===== Example#b20b07
+
+```
+(set? #{1 2 3})
+;; => true
+
+(set? (hash-set 1 2 3))
+;; => true
+
+(set? (sorted-set 1 2 3))
+;; => true
+
+(set? [1 2 3])
+;; => false
+
+(set? {:a 1 :b 2})
+;; => false
+```
 ===== Related
 cljs.core/set
