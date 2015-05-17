@@ -8,6 +8,13 @@ cljs.core/set
 
 Returns a set of the distinct elements of `coll`.
 
+===== Example
+
+```
+ (set [:key "abc" 1])
+ ;; => #{:key "abc" 1}
+```
+
 ===== Related
 cljs.core/hash-set
 cljs.core/sorted-set
