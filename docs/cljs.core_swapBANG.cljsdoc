@@ -17,6 +17,24 @@ effects.
 
 Returns the value that was swapped in.
 
+===== Example
+
+```
+(def app-state (atom 1))
+;; => #<Atom: 1>
+
+@app-state
+;; => 1
+
+(swap! app-state inc)
+;; => 2
+
+(def app-state (atom 1))
+
+(swap! app-state + 1 2 3 4)
+;; => 11
+```
+
 ===== Related
 cljs.core/atom
 cljs.core/reset!
