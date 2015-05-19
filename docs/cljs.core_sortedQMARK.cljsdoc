@@ -10,6 +10,22 @@ Returns true if `coll` implements the `ISorted` protocol, false otherwise.
 
 Sorted maps and sorted sets implement `ISorted`.
 
+===== Example
+
+```
+(sorted? [1 2 3 4 5 6])
+;; => false
+
+(sorted? [4 3 2 1])
+;; => false
+
+(sorted? (sorted-set 4 3 2 1))
+;; => true
+
+(sorted? (sorted-map :k1 1 :k2 2))
+;; => true
+```
+
 ===== Related
 cljs.core/sorted-map
 cljs.core/sorted-set
