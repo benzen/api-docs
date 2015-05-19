@@ -11,6 +11,22 @@ Returns a sequence of the last `n` items in `coll`.
 Depending on the type of collection, `take-last` may be no faster than linear
 time. For vectors, please use `subvec`.
 
+===== Example
+
+```
+(take-last 3 [1 2 3 4 5 6 7])
+;; =>  (5 6 7)
+
+(take-last 3 (list 1 2 3 4 5 6 7))
+;; =>  (5 6 7)
+
+(take-last 3 #{"a" "b" "c" "d" "e"})
+;; =>  ("a" "b" "c")
+
+(take-last 3 {:k1 "v1" :k2 "v2" :k3 "v3" :k4 "v4"})
+;; => ([:k2 "v2"] [:k3 "v3"] [:k4 "v4"])
+```
+
 ===== Related
 cljs.core/last
 cljs.core/butlast
