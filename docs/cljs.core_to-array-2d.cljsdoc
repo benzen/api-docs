@@ -9,6 +9,13 @@ cljs.core/to-array-2d
 Returns a (potentially-ragged) 2-dimensional JavaScript array containing the
 contents of `coll`.
 
+===== Example
+
+```
+(to-array-2d [[1 2 3]])
+;; => #js [#js [1 2 3]]
+```
+
 ===== Related
 cljs.core/to-array
 
