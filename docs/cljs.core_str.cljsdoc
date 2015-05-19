@@ -16,3 +16,5 @@ With more than one argument, returns the concatenation of the `str` values of
 the arguments.
 
 ===== Related
+cljs.core/print
+cljs.core/println
