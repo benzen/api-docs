@@ -8,6 +8,13 @@ cljs.core/split-at
 
 Returns a vector of `[(take n coll) (drop n coll)]`.
 
+===== Example
+
+```
+(split-at 3 [1 2 3 4 5 6 7 8 9])
+;; => [(1 2 3) (4 5 6 7 8 9)]
+```
+
 ===== Related
 cljs.core/split-with
 clojure.string/split
