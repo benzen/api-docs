@@ -8,4 +8,14 @@ cljs.core/string?
 
 Returns true if `x` is a string, false otherwise.
 
+===== Example
+
+```
+(string? "abc")
+;; => true
+
+(string? 123)
+;; => false
+```
+
 ===== Related
