@@ -24,3 +24,7 @@ Returns a transducer when no collection is provided.
 ===== Related
 cljs.core/drop-while
 cljs.core/split-with
+
+===== TODO
+add example for tranducer case
+
