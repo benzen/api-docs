@@ -8,6 +8,19 @@ cljs.core/set!
 
 Sets `js-var` to `val` using the JavaScript `=` operator.
 
+===== Example
+
+```
+(def a 1)
+;; 1
+
+(set! a "abc")
+;; => "abc"
+
+a
+;; => "abc"
+```
+
 ===== Related
 cljs.core/aset
 cljs.core/reset!

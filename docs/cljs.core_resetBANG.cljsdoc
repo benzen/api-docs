@@ -10,6 +10,21 @@ Sets the value of atom `a` to `new-value` without regard for the current value.
 
 Returns `new-value`.
 
+===== Example
+
+```
+(def a (atom 123))
+;; => #<Atom: 123>
+@a
+;; => 123
+
+(reset! a "abc")
+;; => "abc"
+
+@a 
+;; => "abc"
+```
+
 ===== Related
 cljs.core/swap!
 cljs.core/compare-and-set!

@@ -10,4 +10,19 @@ Returns true if `coll` implements the `IReversible` protocol, false otherwise.
 
 Vectors, sorted maps, and sorted sets implement `IReversible`.
 
+===== Example
+
+```
+(reversible? [1 2 3])
+;; => true
+
+(reversible? "abc")
+;; => false
+
+(reversible? #{"a" "b" "c"})
+;; => false
+```
+
 ===== Related
+
+cljs.core/reverse

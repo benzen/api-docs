@@ -17,5 +17,15 @@ If `coll` contains no entries, returns `init` and `f` is not called.
 Note that `reduce-kv` is supported on vectors, where the keys will be the
 ordinals.
 
+===== Example
+
+```
+(reduce inc [ 1 2 3 4 5])
+;; => 5
+
+(reduce str {:key "value" :k2 "value2"})
+;; => "[:key \"value\"][:k2 \"value2\"]"
+```
+
 ===== Related
 cljs.core/reduce

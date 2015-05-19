@@ -17,6 +17,25 @@ called, an Error will be thrown and the validator will not be set.
 
 `(set-validator! my-atom nil)` will remove the validator from `my-atom`.
 
+===== Example
+
+```
+user=> (def atm (atom [2])
+#'user/atm
+
+user=> (set-validator! atm #(every? even? %))
+nil
+
+user=> (swap! atm into [5])
+Error: Assert failed: Validator rejected reference state
+
+user=> (set-validator! atm nil)
+nil
+
+user=> (swap! atm into [5]))
+[2 5]
+```
+
 ===== Related
 cljs.core/atom
 cljs.core/get-validator
