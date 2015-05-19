@@ -12,8 +12,19 @@ if there are fewer than `n`.
 
 Returns a stateful transducer when no collection is provided.
 
+===== Example
+
+```
+(take 3 [1 2 3 4])
+;; => (1 2 3)
+```
+
 ===== Related
 cljs.core/drop
 cljs.core/take-while
 cljs.core/take-last
 cljs.core/take-nth
+
+===== TODO
+add example for tranducer case
+
