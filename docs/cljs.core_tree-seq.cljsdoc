@@ -17,4 +17,21 @@ true.
 
 `root` is the root node of the tree.
 
+===== Example 
+
+```
+(def l1 "leaf 1")
+(def l2 "leaf 2")
+(def b1 [l1 l2])
+(def l21 "leaf 21")
+(def l21 "leaf 22")
+(def b2 [l22 l21])
+(def root [b1 b2])
+
+(defn branch? [node] (not (string? node)))
+(defn children [node] (seq node))
+(tree-seq branch? children root)
+;; => ([["leaf 1" "leaf 2"] [nil "leaf 22"]] ["leaf 1" "leaf 2"] "leaf 1" "leaf 2" [nil "leaf 22"] nil "leaf 22")
+```
+
 ===== Related
