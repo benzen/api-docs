@@ -32,4 +32,4 @@ Returns a stateful transducer when no collection is provided.
 cljs.core/take-last
 
 ===== TODO
-add exmplae for tranducer case
+add example for tranducer case
