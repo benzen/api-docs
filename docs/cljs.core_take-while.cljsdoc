@@ -12,6 +12,15 @@ returns true. `pred` must be free of side-effects.
 
 Returns a transducer when no collection is provided.
 
+===== Example
+
+```
+(def inf-ten #(> 10 %1))
+
+(take-while inf-ten [1 2 3 4 5 16 17 1])
+;; =>  (1 2 3 4 5)
+```
+
 ===== Related
 cljs.core/drop-while
 cljs.core/split-with
