@@ -12,5 +12,15 @@ exclusive.
 
 `end` defaults to the length of the string.
 
+===== Example
+
+```
+(subs "https://www.github.com/" 8)
+;; => "www.github.com"
+
+(subs "https://www.github.com/" 12 18)
+;; => "github"
+```
+
 ===== Related
 
