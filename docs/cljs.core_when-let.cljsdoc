@@ -12,6 +12,19 @@ macro
 When `test` is logical true, evaluates `body` with the value of `test` bound to
 `x`.
 
+===== Example
+
+```
+(when-let [is-twelve-odd (odd? 12)]
+  (println (str "Is twelve odd?" is-twelve-odd)))
+;; => nil
+
+(when-let [is-twelve-even (even? 12)]
+  (println (str "Is twelve even? " is-twelve-even)))
+;; => Is twelve even? true
+
+```
+
 ===== Related
 cljs.core/if-let
 cljs.core/when
