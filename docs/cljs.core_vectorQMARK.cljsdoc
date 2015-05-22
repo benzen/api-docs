@@ -8,6 +8,16 @@ cljs.core/vector?
 
 Returns true if `x` is a vector, false otherwise.
 
+===== Example
+
+```
+(vector? [1 2 3])
+;; => true
+
+(vector? (list 1 2 3))
+;; => false
+```
+
 ===== Related
 cljs.core/vector
 cljs.core/vec
