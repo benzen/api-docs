@@ -12,6 +12,15 @@ macro
 With `bindings` as `x`, `xs`, roughly the same as `(when (seq xs) (let [x (first
 xs)] body))` but `xs` is evaluated only once.
 
+
+===== Example
+
+```
+(when-first [x [1 2 3 4]]
+  (inc x))
+;; => 1
+```
+
 ===== Related
 
 ===== TODO
