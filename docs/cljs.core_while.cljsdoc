@@ -14,5 +14,21 @@ side-effect will cause `test` to become false or nil.
 
 Returns nil.
 
+===== Example
+
+```
+(def a (atom 5))
+
+(while (< 0 @a)
+  (do
+    (swap! a dec)
+    (println @a)))
+;; => 4
+;; => 3
+;; => 2
+;; => 1
+;; => 0
+```
+
 ===== Related
 cljs.core/loop
