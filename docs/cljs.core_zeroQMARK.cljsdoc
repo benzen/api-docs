@@ -8,6 +8,20 @@ cljs.core/zero?
 
 Returns true if `n` is 0, false otherwise.
 
+===== Example
+
+```
+(zero? 0)
+;; => true
+
+(zero? 1)
+;; => false
+
+(zero? [])
+;; => WARNING: cljs.core/==, all arguments must be numbers, got [cljs.core/IVector number] instead
+;; => false
+```
+
 ===== Related
 cljs.core/pos?
 cljs.core/neg?
