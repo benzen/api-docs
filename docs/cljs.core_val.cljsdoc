@@ -8,5 +8,12 @@ cljs.core/val
 
 Returns the value in the map entry.
 
+===== Example
+
+```
+(val [:key "value"])
+;; => "value"
+```
+
 ===== Related
 cljs.core/vals
