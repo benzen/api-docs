@@ -15,6 +15,22 @@ cljs.core/str
 With more than one argument, returns the concatenation of the `str` values of
 the arguments.
 
+===== Example
+
+```
+(str)
+;; => ""
+
+(str nil)
+;; => ""
+
+(str "abc")
+;; => "abc"
+
+(str "abc" " " ":" 123)
+;; => "abc :123"
+```
+
 ===== Related
 cljs.core/print
 cljs.core/println
