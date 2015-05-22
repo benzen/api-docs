@@ -16,6 +16,19 @@ arguments and return the new value. Returns a new nested structure.
 
 If any levels do not exist, hash-maps will be created.
 
+===== Example
+
+```
+(update-in {:k1 {:k11 {:k111 "abc"}}} [:k1 :k11 :k111] (fn [x] "def"))
+;; => {:k1 {:k11 {:k111 "def"}}}
+
+(update-in {:k1 {:k11 {:k111 "abc"}}} [:k1 :k11 :k112] (fn [x] "def"))
+;; => {:k1 {:k11 {:k111 "abc", :k112 "def"}}}
+
+(update-in {:k2 {:k11 {:k111 "abc"}}} [:k1 :k11 :k111] (fn [x] "def"))
+;; => {:k2 {:k11 {:k111 "abc"}}, :k1 {:k11 {:k111 "def"}}}
+```
+
 ===== Related
 cljs.core/assoc-in
 cljs.core/get-in
