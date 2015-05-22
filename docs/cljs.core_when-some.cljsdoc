@@ -11,5 +11,17 @@ macro
 
 When `test` is not nil, evaluates `body` with `x` bound to the value of `test`.
 
+===== Example
+
+```
+(when-some [x (first [1 2 3 4])]
+  (+ 42 x))
+;; => 43
+
+(when-some [x (first nil)]
+  (+ 42 x))
+;; => nil
+```
+
 ===== Related
 cljs.core/if-some
