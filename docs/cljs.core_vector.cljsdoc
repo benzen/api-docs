@@ -8,6 +8,16 @@ cljs.core/vector
 
 Creates a new vector containing `args`.
 
+===== Example
+
+```
+(vector (list 1 2 3 4))
+;; => ([1 2 3 4])
+
+(vector 1 2 3 4)
+[1 2 3 4]
+```
+
 ===== Related
 cljs.core/vec
 cljs.core/vector?

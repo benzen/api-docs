@@ -11,12 +11,13 @@ Creates a new vector containing the contents of `coll`
 ===== Example
 
 ```
-(vector (list 1 2 3 4))
-;; => ([1 2 3 4])
+(vec (list 1 2 3 4))
+;; => [1 2 3 4]
 
-(vector 1 2 3 4)
-[1 2 3 4]
+(vec 1 2 3 4)
+;; => WARNING: Wrong number of args (4) passed to cljs.core/vec
 ```
+
 
 ===== Related
 cljs.core/vector
