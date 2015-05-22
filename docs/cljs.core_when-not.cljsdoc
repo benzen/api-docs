@@ -11,6 +11,21 @@ macro
 
 Evaluates `test`. If logical false, evaluates `body` in an implicit `do`.
 
+===== Example
+
+===== Example
+
+```
+(when-not (odd? 12)
+  "Twelve isnt odd")
+;; => "Twelve isnt odd"
+
+(when-not (even? 12)
+  "Twelve isnt even")
+;; => nil
+
+```
+
 ===== Related
 cljs.core/when
 cljs.core/when-let
