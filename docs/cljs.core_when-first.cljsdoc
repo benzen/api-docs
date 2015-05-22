@@ -12,6 +12,8 @@ macro
 With `bindings` as `x`, `xs`, roughly the same as `(when (seq xs) (let [x (first
 xs)] body))` but `xs` is evaluated only once.
 
+`bindings` is a vector that describe binding name to first element of a sequence.
+The `body` form is evaluated with theses bindings in the scope.
 
 ===== Example
 
