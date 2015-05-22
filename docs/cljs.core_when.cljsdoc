@@ -13,6 +13,13 @@ Evaluates `test`. If logical true, evaluates `body` in an implicit `do`.
 
 `when` is often used instead of `if` for conditions that do not have an "else".
 
+===== Example
+
+```
+(when (even? (* 10 2))
+  "10 multiples are even number")
+```
+
 ===== Related
 cljs.core/when-not
 cljs.core/when-let
