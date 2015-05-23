@@ -8,7 +8,7 @@ cljs.core/re-matches
 
 Returns the result of `(re-find re s)` if `re` fully matches `s`.
 
-===== Example
+===== Example#29a0f9
 
 ```
 (re-matches #"123" "12345")

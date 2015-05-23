@@ -8,7 +8,7 @@ cljs.core/nnext
 
 Same as `(next (next coll))`.
 
-===== Example
+===== Example#956e1e
 
 ```
 (nnext [1 2 3 4 5])

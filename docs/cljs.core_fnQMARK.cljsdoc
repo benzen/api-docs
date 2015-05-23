@@ -9,7 +9,7 @@ cljs.core/fn?
 Returns true if `f` is a function, false otherwise.
 
 
-===== Example
+===== Example#dc0af0
 
 ```
 (fn? even?)

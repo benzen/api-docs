@@ -15,7 +15,7 @@ When `test` is logical true, evaluates `then` with the value of `test` bound to
 
 `else` defaults to nil.
 
-===== Example
+===== Example#af2d0e
 
 ```
 (def a 42)

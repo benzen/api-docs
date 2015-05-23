@@ -34,7 +34,7 @@ calling the function.
 cljs.core/defn
 cljs.core/defn-
 
-===== Example
+===== Example#b9bc0a
 
 ```
 ((fn [a b c]

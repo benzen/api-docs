@@ -8,7 +8,7 @@ cljs.core/keys
 
 Returns a sequence of the keys in `hash-map`.
 
-===== Example
+===== Example#dd6b72
 
 ```
 (keys {:k1 "v1" :k2 "v2"})

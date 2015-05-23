@@ -10,7 +10,7 @@ Returns a vector of the items in `coll` for which `(pred item)` returns true.
 
 `pred` must be free of side-effects.
 
-===== Example
+===== Example#695115
 
 ```
 (filterv even? [1 2 3 4])

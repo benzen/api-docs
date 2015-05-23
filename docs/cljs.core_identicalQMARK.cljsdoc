@@ -11,7 +11,7 @@ boolean
 
 Returns true if `x` and `y` are the same object, false otherwise.
 
-===== Example
+===== Example#9427a7
 
 ```
 (identical? 1 2)

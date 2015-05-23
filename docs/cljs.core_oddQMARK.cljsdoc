@@ -10,7 +10,7 @@ Returns true if `n` is an odd number.
 
 Throws an exception if `n` is not an integer.
 
-===== Example
+===== Example#870f51
 
 ```
 (even? 1)

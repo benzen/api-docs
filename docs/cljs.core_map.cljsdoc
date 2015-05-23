@@ -20,7 +20,7 @@ accept number-of-`c`s arguments.
 
 Returns a transducer when no collection is provided.
 
-===== Example
+===== Example#3a7d61
 
 ```
 (map inc `(1 2 3 4))

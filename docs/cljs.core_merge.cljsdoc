@@ -11,7 +11,7 @@ Returns a map that consists of the rest of the maps `conj`-ed onto the first.
 If a key occurs in more than one map, the mapping from the rightmost map will
 "win".
 
-===== Example
+===== Example#3c67c2
 
 ```
 (merge {:k1 "v1"} {:k2 "v2"})

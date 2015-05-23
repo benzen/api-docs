@@ -10,7 +10,7 @@ Returns a random element from a sequential collection `coll`.
 
 Has the same performance characteristics as `nth`.
 
-===== Example
+===== Example#d44452
 
 ```
 (rand-nth [1 2 3 4 5 6 7])

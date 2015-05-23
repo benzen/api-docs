@@ -10,7 +10,7 @@ Returns a lazy sequence of `x`, `(f x)`, `(f (f x))` etc.
 
 `f` must be free of side-effects.
 
-===== Example 
+===== Example#42a14a
 
 ```
 (take 1 (iterate #(inc %1) 10))

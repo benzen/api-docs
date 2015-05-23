@@ -8,7 +8,7 @@ cljs.core/identity
 
 Returns its argument.
 
-===== Example
+===== Example#1d761f
 
 ```
 (identity 42)

@@ -8,7 +8,7 @@ cljs.core/neg?
 
 Returns true if `n` is less than 0, false otherwise.
 
-===== Example
+===== Example#efbc8d
 
 ```
 (neg? 10)

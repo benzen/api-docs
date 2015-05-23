@@ -8,7 +8,7 @@ cljs.core/int
 
 Coerces `x` to an integer by stripping decimal places.
 
-===== Example
+===== Example#77d3df
 
 ```
 (int 12.21)

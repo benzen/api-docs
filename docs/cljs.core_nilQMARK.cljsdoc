@@ -8,7 +8,7 @@ cljs.core/nil?
 
 Returns true if `x` is nil, false otherwise.
 
-===== Example
+===== Example#585515
 
 ```
 (nil? nil)

@@ -4,7 +4,7 @@ cljs.core/re-find
 ===== Signature
 [re s]
 
-===== Example
+===== Example#60508a
 
 ```
 (re-find #"123\d" "0123456789")

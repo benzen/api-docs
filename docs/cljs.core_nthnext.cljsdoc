@@ -10,7 +10,7 @@ Returns the `n`th `next` of `coll`.
 
 Returns `(seq coll)` when `n` is 0.
 
-===== Example
+===== Example#5c6077
 
 ```
 (nthnext [1 2 3 4 5] 3)

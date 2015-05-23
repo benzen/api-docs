@@ -8,7 +8,7 @@ cljs.core/inc
 
 Returns a number one greater than `x`.
 
-===== Example
+===== Example#a21417
 
 ```
 (inc 1)

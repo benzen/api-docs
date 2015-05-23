@@ -12,7 +12,7 @@ Returns the `x` for which `(k x)` is least.
 
 `(k x)` should return a number.
 
-===== Example
+===== Example#8a838d
 
 ```
 (min-key :key {:key 10} {:key 20})

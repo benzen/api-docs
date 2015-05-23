@@ -8,7 +8,7 @@ cljs.core/not-any?
 
 Returns false if `(pred x)` is logical true for any `x` in `coll`, else true.
 
-===== Example
+===== Example#d4ebdf
 
 ```
 (not-any? even? `(1 2 3 4))

@@ -18,7 +18,7 @@ complete the last partition up to `n` items.
 Returns a partition with less than `n` items if there are not enough padding
 elements.
 
-===== Example
+===== Example#a1ab9e
 
 ```
 (partition 4 [1 2 3 4 5 6 7 8 9 0])

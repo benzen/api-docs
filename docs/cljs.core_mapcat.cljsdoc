@@ -14,7 +14,7 @@ Function `f` should return a collection.
 
 Returns a transducer when no collections are provided.
 
-===== Example
+===== Example#5d41b7
 
 ```
 (mapcat (fn [x] [x (inc x)]) [1 2 3 4 5])

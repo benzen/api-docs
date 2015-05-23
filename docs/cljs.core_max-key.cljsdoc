@@ -12,7 +12,7 @@ Returns the `x` for which `(k x)` is greatest.
 
 `(k x)` should return a number.
 
-===== Example
+===== Example#a34175
 
 ```
 (max-key :key {:key 123} {:key 345})

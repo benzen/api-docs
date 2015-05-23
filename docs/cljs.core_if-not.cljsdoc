@@ -14,7 +14,7 @@ If `test` is false or nil, evaluates and returns `then`. Otherwise, evaluates
 and returns `else`. `else` defaults to nil if not provided.
 
 
-===== Example
+===== Example#c35976
 
 ```
 (if-not (even? 1) "this is odd")

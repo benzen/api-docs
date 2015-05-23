@@ -10,7 +10,7 @@ cljs.core/interleave
 Returns a lazy seq of the first item in each collection, then the second items,
 then the third, etc.
 
-===== Example
+===== Example#3e3dce
 
 ```
 (interleave 

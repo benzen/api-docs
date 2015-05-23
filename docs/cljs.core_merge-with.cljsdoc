@@ -12,7 +12,7 @@ If a key occurs in more than one map, the mapping(s) from the latter (left-to-
 right) will be combined with the mapping in the result by calling `(f val-in-
 result val-in-latter)`.
 
-===== Example
+===== Example#41924d
 
 ```
 (merge-with identity {:k1 "v1"} {:k2 "v2"})

@@ -14,7 +14,7 @@ means false return values will be included.
 
 Returns a stateful transducer when no collection is provided.
 
-===== Example
+===== Example#831318
 
 ```
 (keep-indexed #(str %1 " " %2) ["a" "b" "c" "d"])

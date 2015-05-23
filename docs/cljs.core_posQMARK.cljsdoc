@@ -9,7 +9,7 @@ cljs.core/pos?
 Returns true if `n` is greater than 0, false otherwise.
 
 
-===== Example
+===== Example#3ba2c8
 
 ```
 (pos? 10)

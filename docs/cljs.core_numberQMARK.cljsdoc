@@ -8,7 +8,7 @@ cljs.core/number?
 
 Returns true if `n` is a number, false otherwise.
 
-===== Example
+===== Example#4ca240
 
 ```
 (number? 10)

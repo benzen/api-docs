@@ -12,7 +12,7 @@ value. Returns a lazy sequence of partitions.
 
 Returns a stateful transducer when no collection is provided.
 
-===== Example
+===== Example#06c2b8
 
 ```
 (partition-by #(< 3 %) [1 2 3 4 5 6])

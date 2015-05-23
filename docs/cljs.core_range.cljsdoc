@@ -7,7 +7,7 @@ cljs.core/range
 [start end]
 [start end step]
 
-===== Example
+===== Example#dcbe50
 
 ```
 (range 10)

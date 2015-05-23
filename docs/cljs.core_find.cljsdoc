@@ -8,7 +8,7 @@ cljs.core/find
 
 Returns the map entry for key `k`, or nil if `k` is not found.
 
-===== Example
+===== Example#6ef9fd
 
 ```
 (find {:key "value" :k "v"} :k)

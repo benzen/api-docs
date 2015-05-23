@@ -13,7 +13,7 @@ corresponding val in `smap`.
 
 Returns a transducer when `coll` is not provided.
 
-===== Example
+===== Example#215154
 
 ```
  (replace {:k1 "v" :k2 "v2"} [:k1 1 2 3])

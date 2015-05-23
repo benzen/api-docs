@@ -8,7 +8,7 @@ cljs.core/re-seq
 
 Returns a lazy sequence of successive matches of regex `re` in string `s`.
 
-===== Example
+===== Example#42bfd4
 
 ```
 (re-seq #"a\w" "abcadaea")

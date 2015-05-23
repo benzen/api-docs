@@ -13,7 +13,7 @@ cljs.core/list*
 Creates a new list containing the items prepended to the rest, the last of which
 will be treated as a sequence.
 
-===== Example
+===== Example#5ad417
 
 ```
 (list* 1 2 [3 4])

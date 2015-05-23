@@ -11,7 +11,7 @@ Returns a random floating point number between 0 inclusive and `n` exclusive.
 
 `n` defaults to 1.
 
-===== Example
+===== Example#4ea449
 
 ```
 (rand)

@@ -13,7 +13,7 @@ keys.
 Returns nil if the key is not found, or `not-found` if supplied.
 
 
-===== Example
+===== Example#92fcb0
 
 ```
 (get-in {:k1 "v1" :k2 "v2" :k3 "v3"} #{:k1})

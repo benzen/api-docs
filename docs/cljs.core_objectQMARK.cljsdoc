@@ -8,7 +8,7 @@ cljs.core/object?
 
 Returns true if `x` is a JavaScript object, false otherwise.
 
-===== Example
+===== Example#f07438
 
 ```
 (object? (js/Object))

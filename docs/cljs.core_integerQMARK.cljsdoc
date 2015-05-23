@@ -8,7 +8,7 @@ cljs.core/integer?
 
 Returns true if `n` is an integer, false otherwise.
 
-===== Example
+===== Example#45a07e
 
 ```
 (integer? 12)

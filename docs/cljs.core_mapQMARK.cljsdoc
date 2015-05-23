@@ -9,7 +9,7 @@ cljs.core/map?
 Returns true if `x` is a map, false otherwise.
 
 
-===== Example
+===== Example#1dc1ff
 
 ```
 (map? [1 2 3])

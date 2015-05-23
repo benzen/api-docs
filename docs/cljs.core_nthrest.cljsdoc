@@ -10,7 +10,7 @@ Returns the `nth` rest of `coll`.
 
 Returns `coll` when `n` is 0.
 
-===== Example
+===== Example#8eeb6b
 
 ```
 (nthrest [1 2 3 4 5 6] 3)

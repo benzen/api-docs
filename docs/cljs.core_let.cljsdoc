@@ -32,7 +32,7 @@ syntax and scope rules.
 [special forms]:http://clojure.org/special_forms
 
 
-===== Example
+===== Example#89aa49
 
 ```
 (defn fun []

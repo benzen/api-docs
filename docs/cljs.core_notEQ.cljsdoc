@@ -12,7 +12,7 @@ Returns the opposite of `=`.
 
 Same as `(not (= x y))`
 
-===== Example
+===== Example#3a8631
 
 ```
 (not= 10 12)

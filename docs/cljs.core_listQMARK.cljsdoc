@@ -8,7 +8,7 @@ cljs.core/list?
 
 Returns true if `x` is a list, false otherwise.
 
-===== Example
+===== Example#d1fddc
 
 ```
 (list? `(1 2 3))

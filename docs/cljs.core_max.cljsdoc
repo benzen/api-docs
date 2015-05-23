@@ -10,7 +10,7 @@ cljs.core/max
 
 Returns the greatest number argument.
 
-===== Example
+===== Example#c91bfc
 
 ```
 (max 123 456)

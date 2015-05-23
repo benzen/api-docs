@@ -8,7 +8,7 @@ cljs.core/into-array
 
 Returns a new JavaScript array from the elements of `aseq`.
 
-===== Example
+===== Example#7120a6
 
 ```
 (into-array [1 2 3 4])

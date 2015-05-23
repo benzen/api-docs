@@ -11,7 +11,7 @@ Returns a lazy sequence of `x`s.
 
 The length of the sequence is infinite, or `n` if provided.
 
-===== Example
+===== Example#9bef99
 
 ```
 (take 2 (repeat 10)))

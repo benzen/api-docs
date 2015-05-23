@@ -16,7 +16,7 @@ colls are ignored.
 
 Function `f` should accept number-of-colls arguments.
 
-===== Example
+===== Example#7b863e
 
 ```
 (mapv inc (list 1 2 3 4))

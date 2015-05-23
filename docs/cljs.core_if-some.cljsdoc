@@ -13,7 +13,7 @@ macro
 If `test` is not nil, evaluates `then` with `x` bound to the value of `test`. If
 not, yields `else`.
 
-===== Example
+===== Example#62cae7
 
 ```
 (if-some [value (- 44 2)]

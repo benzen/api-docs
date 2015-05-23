@@ -17,7 +17,7 @@ If `coll` contains no entries, returns `init` and `f` is not called.
 Note that `reduce-kv` is supported on vectors, where the keys will be the
 ordinals.
 
-===== Example
+===== Example#8fc71c
 
 ```
 (reduce inc [ 1 2 3 4 5])

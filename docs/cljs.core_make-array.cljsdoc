@@ -9,7 +9,7 @@ cljs.core/make-array
 Creates an empty JavaScript array of size `size`.
 
 
-===== Example
+===== Example#127376
 
 ```
 (make-array 3)

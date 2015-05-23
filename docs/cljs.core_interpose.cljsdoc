@@ -8,7 +8,7 @@ cljs.core/interpose
 
 Returns a lazy seq of the elements of `coll` separated by `sep`.
 
-===== Example
+===== Example#aae19e
 
 ```
 (interpose "," (list 1 2 3 4 5))

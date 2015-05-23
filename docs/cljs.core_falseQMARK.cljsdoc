@@ -9,7 +9,7 @@ cljs.core/false?
 Returns true if `x` is the value false, false otherwise.
 
 
-===== Example 
+===== Example#1f6e24
 
 ```
 (false? "")

@@ -13,7 +13,7 @@ results in memory. When calls with the same arguments are repeated often, a
 memoized function has higher performance at the expense of higher memory usage.
 
 
-===== Example
+===== Example#d49f7b
 
 ```
 (defn fibo [n]
