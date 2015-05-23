@@ -14,7 +14,7 @@ false return values will be included.
 
 Returns a transducer when no collection is provided.
 
-===== Example
+===== Example#4e1e7d
 
 ```
 (filter even? [1 2 3 4 5 6 7 8 9])
