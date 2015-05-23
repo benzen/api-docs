@@ -11,7 +11,7 @@ Returns an empty collection of the same category as `coll`.
 Returns nil if `coll` is nil.
 
 
-===== Example
+===== Example#6b083e
 
 ```
 (empty [1 2 3])
